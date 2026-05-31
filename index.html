@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Profund – aprindem conversații cu sens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --teal-950:#082826;--teal-900:#0b3735;--teal-800:#0f4845;--teal-700:#125e58;
+    --teal-500:#1a8a80;--teal-300:#5cc4b7;--cream:#f6efe0;--cream-soft:#faf5ea;
+    --paper:#fffdf8;--coral:#ff7a59;--amber:#f4b860;--ink:#13322f;--ink-soft:#3d5a56;
+    --shadow:rgba(8,40,38,.18);
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Figtree','Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--coral);color:#fff}
+
+  /* language toggle */
+  .lang-toggle{
+    position:fixed;top:1.1rem;right:1.1rem;z-index:50;display:flex;
+    background:rgba(8,40,38,.55);backdrop-filter:blur(10px);border:1px solid rgba(246,239,224,.25);
+    border-radius:999px;padding:.25rem;gap:.15rem;
+  }
+  .lang-toggle button{
+    font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.04em;
+    padding:.4rem .85rem;border-radius:999px;border:none;cursor:pointer;background:transparent;color:var(--cream);transition:all .2s;
+  }
+  .lang-toggle button.active{background:var(--amber);color:var(--teal-950)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 1.5rem 3rem;
+    background:radial-gradient(120% 90% at 80% -10%,rgba(244,184,96,.16),transparent 55%),radial-gradient(100% 80% at 10% 110%,rgba(255,122,89,.18),transparent 55%),linear-gradient(165deg,var(--teal-900),var(--teal-950));
+    color:var(--cream);overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);opacity:.6}
+  .emblem{width:84px;height:84px;margin-bottom:1.6rem;position:relative;z-index:2;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .brand{font-family:var(--serif);font-weight:600;font-size:clamp(3.8rem,12vw,7.5rem);line-height:.9;letter-spacing:-.02em;position:relative;z-index:2;animation:rise .9s .08s cubic-bezier(.2,.8,.2,1) both}
+  .brand em{font-style:italic;color:var(--amber)}
+  .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,3vw,1.7rem);color:var(--teal-300);margin-top:.6rem;position:relative;z-index:2;animation:rise .9s .16s cubic-bezier(.2,.8,.2,1) both}
+  .hashtag{margin-top:2rem;font-weight:600;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);opacity:.7;position:relative;z-index:2;animation:rise .9s .24s cubic-bezier(.2,.8,.2,1) both}
+  .hero-cta{margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;animation:rise .9s .32s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  .btn{font-family:var(--sans);font-weight:600;font-size:1rem;padding:.85rem 1.8rem;border-radius:999px;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .25s,box-shadow .25s,background .25s}
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 10px 26px rgba(255,122,89,.4)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(255,122,89,.5)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(246,239,224,.4)}
+  .btn-ghost:hover{background:rgba(246,239,224,.1);transform:translateY(-3px)}
+  .btn-teal{background:var(--teal-700);color:var(--cream)}
+  .btn-teal:hover{transform:translateY(-3px);background:var(--teal-500)}
+  .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:var(--cream);opacity:.6;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;animation:bob 2.2s ease-in-out infinite;text-decoration:none}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  section{padding:5.5rem 1.5rem}
+  .wrap{max-width:1100px;margin:0 auto}
+  .narrow{max-width:760px}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.05;letter-spacing:-.015em;margin-bottom:1.2rem}
+  h2 em{font-style:italic;color:var(--coral)}
+  .lead{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--ink-soft);max-width:620px}
+  .eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-500);margin-bottom:.8rem;display:block}
+
+  .intro{background:var(--paper);text-align:center}
+  .intro .wrap{display:flex;flex-direction:column;align-items:center}
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:3rem}
+  .pillar{background:var(--cream-soft);border:1px solid rgba(18,94,88,.12);border-radius:20px;padding:1.8rem;text-align:left;transition:transform .3s,box-shadow .3s}
+  .pillar:hover{transform:translateY(-5px);box-shadow:0 18px 40px var(--shadow)}
+  .pillar .ico{font-size:1.6rem;margin-bottom:.6rem;display:block}
+  .pillar h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin-bottom:.4rem}
+  .pillar p{color:var(--ink-soft);font-size:.98rem}
+
+  .might{background:var(--teal-900);color:var(--cream)}
+  .might h2{color:var(--cream)}.might .lead{color:var(--teal-300)}
+  .might-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:2.4rem}
+  .might-item{display:flex;gap:.9rem;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.3rem}
+  .might-item .dot{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--amber);color:var(--teal-950);display:grid;place-items:center;font-weight:700;font-family:var(--serif)}
+  .might-item span:last-child{font-size:1.02rem}
+
+  .ways{background:var(--cream)}
+  .ways-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;margin-top:3rem}
+  .way{background:var(--paper);border-radius:22px;padding:2rem;position:relative;overflow:hidden;border:1px solid rgba(18,94,88,.1);transition:transform .3s,box-shadow .3s}
+  .way:hover{transform:translateY(-6px);box-shadow:0 20px 44px var(--shadow)}
+  .way .num{font-family:var(--serif);font-size:3.4rem;font-weight:600;line-height:1;color:var(--teal-300);position:absolute;top:1.1rem;right:1.4rem;opacity:.55}
+  .way h3{font-family:var(--serif);font-weight:600;font-size:1.4rem;margin-bottom:.2rem;padding-right:3rem}
+  .way .who{font-size:.82rem;font-weight:600;color:var(--coral);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.8rem}
+  .way p{color:var(--ink-soft);font-size:.97rem}
+
+  .play{background:var(--teal-950);color:var(--cream);position:relative}
+  .play::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 50% at 50% 0%,rgba(244,184,96,.1),transparent 60%);pointer-events:none}
+  .play .wrap{position:relative;z-index:2}
+  .play h2{color:var(--cream)}.play .lead{color:var(--teal-300)}
+  .draw-zone{display:flex;flex-direction:column;align-items:center;gap:1.4rem;margin:2.8rem 0 3.5rem}
+  .draw-card{width:min(420px,90vw);min-height:230px;border-radius:24px;padding:2.2rem;background:linear-gradient(150deg,var(--cream-soft),var(--paper));color:var(--ink);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.7rem);line-height:1.25;box-shadow:0 24px 60px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.5);transition:transform .5s cubic-bezier(.2,.8,.2,1);position:relative}
+  .draw-card .tag{position:absolute;top:1rem;left:1.4rem;font-family:var(--sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--teal-500)}
+  .draw-card.flip{animation:dealFlip .55s ease}
+  @keyframes dealFlip{0%{transform:rotateY(90deg) scale(.96);opacity:.2}100%{transform:none;opacity:1}}
+  .blocks-nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2.6rem}
+  .block-tab{font-family:var(--sans);font-weight:600;font-size:.85rem;padding:.5rem 1rem;border-radius:999px;border:1.5px solid rgba(92,196,183,.35);background:transparent;color:var(--teal-300);cursor:pointer;transition:all .2s}
+  .block-tab:hover{border-color:var(--teal-300)}
+  .block-tab.active{background:var(--amber);color:var(--teal-950);border-color:var(--amber)}
+  .block-title{font-family:var(--serif);font-style:italic;font-size:1.5rem;text-align:center;margin-bottom:1.8rem;color:var(--amber)}
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem;perspective:1200px}
+  .card{aspect-ratio:3/4;cursor:pointer;background:transparent;border:none;padding:0;perspective:1000px}
+  .card-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;border-radius:16px}
+  .card.flipped .card-inner{transform:rotateY(180deg)}
+  .card-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.35);overflow:hidden}
+  .card-back{background:linear-gradient(155deg,var(--teal-700),var(--teal-900));color:var(--cream);flex-direction:column;gap:.4rem}
+  .card-back::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(244,184,96,.18),transparent 60%)}
+  .card-back .mark{font-family:var(--serif);font-style:italic;font-size:1.6rem;z-index:1}
+  .card-back .mark em{color:var(--amber);font-style:italic}
+  .card-back .ripple{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(246,239,224,.4);position:relative;z-index:1}
+  .card-back .ripple::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1.5px solid rgba(246,239,224,.25)}
+  .card:hover .card-back{filter:brightness(1.12)}
+  .card-front{background:linear-gradient(155deg,var(--cream-soft),var(--paper));color:var(--ink);transform:rotateY(180deg);flex-direction:column;padding:1rem .9rem;gap:.5rem}
+  .card-front .q{font-family:var(--serif);font-size:.92rem;line-height:1.25;overflow-y:auto;max-height:100%}
+  .card-front .n{position:absolute;top:.5rem;right:.7rem;font-size:.7rem;font-weight:700;color:var(--teal-300)}
+
+  /* OFFLINE */
+  .offline{background:var(--cream)}
+  .offline-actions{display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0 1rem}
+  .offline-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:start}
+  .offline-box{background:var(--paper);border:1px dashed rgba(18,94,88,.3);border-radius:20px;padding:1.8rem}
+  .offline-box h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin-bottom:.5rem}
+  .offline-box p{color:var(--ink-soft);font-size:.97rem}
+  .offline-box .ico{font-size:1.6rem;display:block;margin-bottom:.5rem}
+
+  .contact{background:var(--paper)}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  form{display:flex;flex-direction:column;gap:1rem}
+  label{font-weight:600;font-size:.9rem;margin-bottom:-.5rem}
+  input,textarea{font-family:var(--sans);font-size:1rem;padding:.85rem 1rem;border-radius:12px;border:1.5px solid rgba(18,94,88,.2);background:var(--cream-soft);color:var(--ink);resize:vertical}
+  input:focus,textarea:focus{outline:none;border-color:var(--teal-500);background:#fff}
+  .hp{display:none}
+  .form-note{font-size:.85rem;color:var(--ink-soft);margin-top:.3rem}
+
+  footer{background:var(--teal-950);color:var(--cream);text-align:center;padding:3.5rem 1.5rem}
+  footer .fmark{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--amber);margin-bottom:.8rem}
+  footer a{color:var(--teal-300);text-decoration:none;border-bottom:1px solid transparent;transition:border .2s}
+  footer a:hover{border-color:var(--teal-300)}
+  footer .links{margin:1.2rem 0;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;font-weight:600}
+  footer .fine{font-size:.85rem;opacity:.6;margin-top:1.2rem;line-height:1.7}
+  .vol{display:inline-block;margin-top:.6rem;font-size:.85rem;opacity:.8}
+
+  /* PRINT SHEET */
+  #printSheet{display:none}
+  @media print{
+    body{background:#fff}
+    body>*{display:none !important}
+    #printSheet{display:block !important}
+    .print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .print-card{border:1.2px solid #0b3735;border-radius:10px;padding:12px 10px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;break-inside:avoid;page-break-inside:avoid}
+    .print-card .pc-top{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a8a80}
+    .print-card .pc-q{font-family:var(--serif);font-size:11px;line-height:1.25;margin:8px 0;color:#13322f}
+    .print-card .pc-foot{font-family:var(--serif);font-style:italic;font-size:11px;color:#0b3735;text-align:right}
+    .print-head{font-family:var(--serif);font-size:18px;margin-bottom:10px;text-align:center}
+    @page{margin:1cm}
+  }
+
+  @media(max-width:680px){
+    .contact .wrap{grid-template-columns:1fr}
+    .offline-grid{grid-template-columns:1fr}
+    section{padding:4rem 1.2rem}
+    .card-grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:.7rem}
+  }
+
+  .draw-buttons{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+  .btn-amber{background:var(--amber);color:var(--teal-950)}
+  .btn-amber:hover{transform:translateY(-3px);filter:brightness(1.05)}
+
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button id="btnRo" class="active" onclick="setLang('ro')">RO</button>
+  <button id="btnEn" onclick="setLang('en')">EN</button>
+  <button id="btnFr" onclick="setLang('fr')">FR</button>
+</div>
+
+<header class="hero">
+  <svg class="emblem" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <circle cx="50" cy="50" r="46" stroke="#f4b860" stroke-width="2.5"/>
+    <circle cx="50" cy="50" r="30" stroke="#5cc4b7" stroke-width="2"/>
+    <circle cx="50" cy="50" r="14" stroke="#f6efe0" stroke-width="2"/>
+    <circle cx="50" cy="50" r="3" fill="#ff7a59"/>
+  </svg>
+  <h1 class="brand" data-i18n="brand">Pro<em>fund</em></h1>
+  <p class="tagline" data-i18n="tagline">aprindem conversații cu sens</p>
+  <p class="hashtag" data-i18n="hashtag">#FaraVorbeGoale</p>
+  <div class="hero-cta">
+    <a href="#joaca" class="btn btn-primary" data-i18n="cta_play">Joacă online →</a>
+    <a href="#despre" class="btn btn-ghost" data-i18n="cta_about">Ce este Profund?</a>
+  </div>
+  <a href="#despre" class="scroll-hint" data-i18n="scroll">derulează în jos</a>
+</header>
+
+<section class="intro" id="despre">
+  <div class="wrap narrow">
+    <span class="eyebrow" data-i18n="intro_eyebrow"></span>
+    <h2 data-i18n="intro_h2"></h2>
+    <p class="lead" style="margin:0 auto" data-i18n="intro_lead"></p>
+    <div class="pillars">
+      <div class="pillar"><span class="ico">🌉</span><h3 data-i18n="p1h"></h3><p data-i18n="p1p"></p></div>
+      <div class="pillar"><span class="ico">💬</span><h3 data-i18n="p2h"></h3><p data-i18n="p2p"></p></div>
+      <div class="pillar"><span class="ico">🤲</span><h3 data-i18n="p3h"></h3><p data-i18n="p3p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="might">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--amber)" data-i18n="might_eyebrow"></span>
+    <h2 data-i18n="might_h2"></h2>
+    <div class="might-list">
+      <div class="might-item"><span class="dot">1</span><span data-i18n="m1"></span></div>
+      <div class="might-item"><span class="dot">2</span><span data-i18n="m2"></span></div>
+      <div class="might-item"><span class="dot">3</span><span data-i18n="m3"></span></div>
+      <div class="might-item"><span class="dot">4</span><span data-i18n="m4"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="ways">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="ways_eyebrow"></span>
+    <h2 data-i18n="ways_h2"></h2>
+    <div class="ways-grid">
+      <div class="way"><span class="num">1</span><h3 data-i18n="w1h"></h3><p class="who" data-i18n="w1who"></p><p data-i18n="w1p"></p></div>
+      <div class="way"><span class="num">2</span><h3 data-i18n="w2h"></h3><p class="who" data-i18n="w2who"></p><p data-i18n="w2p"></p></div>
+      <div class="way"><span class="num">3</span><h3 data-i18n="w3h"></h3><p class="who" data-i18n="w3who"></p><p data-i18n="w3p"></p></div>
+      <div class="way"><span class="num">4</span><h3 data-i18n="w4h"></h3><p class="who" data-i18n="w4who"></p><p data-i18n="w4p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="play" id="joaca">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--amber)" data-i18n="play_eyebrow"></span>
+    <h2 data-i18n="play_h2"></h2>
+    <p class="lead" data-i18n="play_lead"></p>
+    <div class="draw-zone">
+      <div class="draw-card" id="drawCard">
+        <span class="tag" id="drawTag" data-i18n="draw_tag"></span>
+        <span id="drawText" data-i18n="draw_text"></span>
+      </div>
+      <div class="draw-buttons">
+        <button class="btn btn-primary" id="drawBtn" data-i18n="draw_btn"></button>
+        <button class="btn btn-teal" id="shuffleBtn" data-i18n="shuffle_btn"></button>
+        <button class="btn btn-amber" id="nextBtn" data-i18n="next_btn"></button>
+      </div>
+    </div>
+    <div class="blocks-nav" id="blocksNav"></div>
+    <h3 class="block-title" id="blockTitle"></h3>
+    <div class="card-grid" id="cardGrid"></div>
+  </div>
+</section>
+
+<section class="offline" id="offline">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="offline_eyebrow"></span>
+    <h2 data-i18n="offline_h2"></h2>
+    <p class="lead" data-i18n="offline_lead"></p>
+    <div class="offline-actions">
+      <button class="btn btn-primary" id="printBtn" data-i18n="offline_print"></button>
+      <button class="btn btn-teal" id="txtBtn" data-i18n="offline_txt"></button>
+    </div>
+    <div class="offline-grid">
+      <div class="offline-box"><span class="ico">✂️</span><h3 data-i18n="off_b1h"></h3><p data-i18n="off_b1p"></p></div>
+      <div class="offline-box"><span class="ico">📦</span><h3 data-i18n="off_b2h"></h3><p data-i18n="off_b2p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="contact_eyebrow"></span>
+      <h2 data-i18n="contact_h2"></h2>
+      <p class="lead" data-i18n="contact_lead"></p>
+      <p style="margin-top:1.4rem;font-weight:600">📮 <a href="mailto:alexio@trom.tf" style="color:var(--teal-500);text-decoration:none">alexio@trom.tf</a></p>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.sent').style.display='block';">
+      <label for="nm" data-i18n="f_name"></label>
+      <input id="nm" type="text" required>
+      <label for="em" data-i18n="f_email"></label>
+      <input id="em" type="email" required>
+      <input class="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label for="sb" data-i18n="f_subject"></label>
+      <input id="sb" type="text">
+      <label for="msg" data-i18n="f_message"></label>
+      <textarea id="msg" rows="5" required></textarea>
+      <button class="btn btn-primary" type="submit" style="align-self:flex-start" data-i18n="f_submit"></button>
+      <p class="form-note sent" style="display:none;color:var(--teal-500);font-weight:600" data-i18n="f_sent"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="fmark" data-i18n="brand"></div>
+  <p data-i18n="tagline"></p>
+  <div class="links">
+    <a href="#despre" data-i18n="f_about"></a>
+    <a href="#joaca" data-i18n="f_play"></a>
+    <a href="#offline" data-i18n="f_offline"></a>
+    <a href="#contact" data-i18n="f_contact"></a>
+    <a href="https://www.trade-free.org/" target="_blank" rel="noopener">trade-free.org</a>
+  </div>
+  <p class="fine" data-i18n="f_fine"></p>
+  <span class="vol" data-i18n="f_vol"></span>
+</footer>
+
+<div id="printSheet"></div>
+
+<script>
+const I18N = {"ro": {"title": "Profund – aprindem conversații cu sens", "brand": "Pro<em>fund</em>", "tagline": "aprindem conversații cu sens", "hashtag": "#FaraVorbeGoale", "cta_play": "Joacă online →", "cta_about": "Ce este Profund?", "scroll": "derulează în jos", "intro_eyebrow": "Hai să vorbim cu adevărat", "intro_h2": "Hai să avem conversații <em>cu sens</em>, oriunde în lume!", "intro_lead": "Îi cunoști cu adevărat pe oamenii din jurul tău? Cunoașteți-vă cu acest joc de întrebări fără-troc.", "p1h": "O punte între oameni", "p1p": "Apropie persoanele și creează legături reale dincolo de conversațiile de complezență.", "p2h": "Un declanșator de conversații", "p2p": "O întrebare bună deschide uși pe care nu știai că le ai. Restul vine de la sine.", "p3h": "Un joc fără-troc", "p3p": "Nu trebuie să dai nimic în schimb ca să te joci. Fără bani, fără date, nimic. Este complet fără-troc 🙂", "might_eyebrow": "Ce s-ar putea întâmpla", "might_h2": "S-ar putea să…", "m1": "îi cunoști cu adevărat pe oamenii cu care îți petreci timpul", "m2": "dezvolți mai multă profunzime în tine însuți/însăți", "m3": "te îndrăgostești de cineva care îți place", "m4": "discuți despre subiecte și idei cu adevărat interesante", "ways_eyebrow": "Reguli simple, infinite posibilități", "ways_h2": "Moduri de <em>joc</em>", "w1h": "Ia &amp; Răspunde", "w1who": "ideal pentru 2–6 persoane", "w1p": "Cineva ia o carte, o citește cu voce tare și răspunde la întrebare. Oricine altcineva dorește poate răspunde și el. Discuțiile pot continua cât de mult doriți. Apoi următoarea persoană ia o carte și tot așa.", "w2h": "Ghicește", "w2who": "ideal pentru 2–6 persoane", "w2p": "Cineva ia o carte, o citește cu voce tare, iar ceilalți încearcă să ghicească care ar fi răspunsurile lui/ei la întrebare. Discuțiile pot continua cât de mult doriți. Apoi următoarea persoană ia o carte și tot așa.", "w3h": "Declanșator de conversații", "w3who": "ideal pentru 4–20 persoane", "w3p": "Când vă întâlniți în grup, fiecare persoană nouă care se alătură poate lua o carte și răspunde la întrebare. Cei care sunt deja acolo pot adăuga și alte întrebări pe lângă.", "w4h": "FărăRăspuns – TreciLaAcțiune", "w4who": "ideal pentru 2–10 persoane", "w4p": "Se ia o carte; persoana A decide dacă vrea să răspundă la întrebare. Dacă nu, până la 3 persoane pot propune acțiuni alternative pe care trebuie să le facă. Ea/el alege o acțiune. Alternativ, acțiunile pot fi stabilite dinainte. Apoi următoarea persoană ia o carte…", "play_eyebrow": "Joacă online", "play_h2": "Trage o carte și <em>începe</em>", "play_lead": "Iată întrebările pentru joc online, organizate în blocuri de câte 10 întrebări fiecare. Apasă pe orice carte ca să o întorci.", "draw_tag": "apasă un buton", "draw_text": "Trage o carte la întâmplare sau amestecă tot pachetul și lasă conversația să curgă…", "draw_btn": "🎴 Carte la întâmplare", "shuffle_btn": "🔀 Amestecă pachetul", "next_btn": "⏭️ Următoarea carte", "deck_shuffled": "Pachet amestecat! Apasă „Următoarea carte”.", "deck_done": "Ai parcurs tot pachetul 🎉 Amestecă din nou.", "offline_eyebrow": "Joacă offline", "offline_h2": "Printează-ți singur <em>cărțile</em>", "offline_lead": "Generează toate cele 150 de cărți într-o foaie gata de tipărit (sau salvează ca PDF), apoi decupează-le și pune-le într-o cutie. Sau descarcă întrebările ca fișier text.", "offline_print": "🖨️ Printează cărțile (PDF)", "offline_txt": "📄 Descarcă întrebările (text)", "off_b1h": "Cărțile de bază", "off_b1p": "Apasă „Printează”, alege „Salvează ca PDF” în dialogul de tipărire și vei obține toate cele 150 de întrebări, câte 3 pe rând, gata de decupat.", "off_b2h": "Moduri de joc &amp; cutia", "off_b2p": "Folosește cele 4 moduri de joc de mai sus. Strânge cărțile decupate într-o cutie mică și ai jocul complet, fără-troc, oriunde mergi.", "contact_eyebrow": "Contribuie", "contact_h2": "Contact", "contact_lead": "Ai o întrebare bună pentru joc care lipsește, ai sugestii sau vrei să traduci acest joc în limba ta? Contactează-ne cu drag 🙂", "f_name": "Numele tău (obligatoriu)", "f_email": "E-mailul tău (obligatoriu)", "f_subject": "Subiect", "f_message": "Mesajul tău", "f_submit": "Trimite mesajul", "f_sent": "Mulțumim! Mesajul a fost pregătit. 🙂", "f_about": "Despre", "f_play": "Joacă online", "f_offline": "Joacă offline", "f_contact": "Contact", "f_fine": "Acesta este un joc de întrebări <strong>fără-troc</strong> (trade-free).<br>Adaptare română / engleză / franceză după <a href=\"https://deepcards.org/\" target=\"_blank\" rel=\"noopener\">deepcards.org</a> · proiect din ecosistemul <a href=\"https://www.tiotrom.com/\" target=\"_blank\" rel=\"noopener\">TROM</a>.", "f_vol": "Realizat cu drag de Alexio, voluntar TROM 🤲", "print_head": "Profund · 150 de cărți pentru conversații cu sens"}, "en": {"title": "Deep – igniting deep conversations", "brand": "<em>Deep</em>", "tagline": "igniting deep conversations", "hashtag": "#nosmalltalk", "cta_play": "Play online →", "cta_about": "What is Deep?", "scroll": "scroll down", "intro_eyebrow": "Let's truly talk", "intro_h2": "Let's have <em>meaningful</em> conversations worldwide!", "intro_lead": "Do you really know the people around you? Get to know each other with this trade-free question game.", "p1h": "A bridge between people", "p1p": "It brings people closer and creates real connections beyond small talk.", "p2h": "A conversation starter", "p2p": "A good question opens doors you didn't know you had. The rest follows naturally.", "p3h": "A trade-free game", "p3p": "You don't have to give anything in return for playing. No money, no data, nothing. It's trade-free 🙂", "might_eyebrow": "What might happen", "might_h2": "You might…", "m1": "really get to know the people you spend time with", "m2": "create more depth within yourself", "m3": "fall in love with someone you like", "m4": "talk about truly interesting topics and ideas", "ways_eyebrow": "Simple rules, endless possibilities", "ways_h2": "Ways to <em>play</em>", "w1h": "Take &amp; Answer", "w1who": "best for 2–6 people", "w1p": "One person takes a card, reads it out loud and answers the question. Anyone else who wants to can answer too. Discussions can go on as long as you like. Then the next person takes a card, and so on.", "w2h": "LetGuess", "w2who": "best for 2–6 people", "w2p": "One person takes a card, reads it out loud, and the others try to guess what their answers to the question would be. Discussions can go on as long as you like. Then the next person takes a card, and so on.", "w3h": "Conversation Starter", "w3who": "best for 4–20 people", "w3p": "When meeting up in a group, every new person who joins can take a card and answer the question. People who are already there can add more questions on top of it.", "w4h": "NoAnswer – TakeAction", "w4who": "best for 2–10 people", "w4p": "Take a card; person A decides whether they want to answer the question. If not, up to 3 people can suggest alternative actions they must do. They pick one action. Alternatively, actions can be set beforehand. Then the next person takes a card…", "play_eyebrow": "Play online", "play_h2": "Draw a card and <em>begin</em>", "play_lead": "Here are the questions to play online, sorted into blocks of 10 questions each. Tap any card to flip it.", "draw_tag": "press a button", "draw_text": "Draw a random card or shuffle the whole deck and let the conversation flow…", "draw_btn": "🎴 Random card", "shuffle_btn": "🔀 Shuffle the deck", "next_btn": "⏭️ Next card", "deck_shuffled": "Deck shuffled! Press “Next card”.", "deck_done": "You've gone through the whole deck 🎉 Shuffle again.", "offline_eyebrow": "Play offline", "offline_h2": "Print the <em>cards</em> yourself", "offline_lead": "Generate all 150 cards on a print-ready sheet (or save as PDF), then cut them out and put them in a box. Or download the questions as a text file.", "offline_print": "🖨️ Print the cards (PDF)", "offline_txt": "📄 Download questions (text)", "off_b1h": "The basic card set", "off_b1p": "Press “Print”, choose “Save as PDF” in the print dialog and you'll get all 150 questions, 3 per row, ready to cut out.", "off_b2h": "Ways to play &amp; box", "off_b2p": "Use the 4 ways to play above. Gather the cut-out cards in a small box and you have the complete, trade-free game wherever you go.", "contact_eyebrow": "Contribute", "contact_h2": "Contact", "contact_lead": "Do you have a good question for the game that's missing, suggestions, or do you want to translate this game into your language? Feel free to get in touch 🙂", "f_name": "Your name (required)", "f_email": "Your email (required)", "f_subject": "Subject", "f_message": "Your message", "f_submit": "Send message", "f_sent": "Thank you! Your message is ready. 🙂", "f_about": "About", "f_play": "Play online", "f_offline": "Play offline", "f_contact": "Contact", "f_fine": "This is a <strong>trade-free</strong> question game.<br>Romanian / English / French adaptation of <a href=\"https://deepcards.org/\" target=\"_blank\" rel=\"noopener\">deepcards.org</a> · part of the <a href=\"https://www.tiotrom.com/\" target=\"_blank\" rel=\"noopener\">TROM</a> ecosystem.", "f_vol": "Made with care by Alexio, TROM volunteer 🤲", "print_head": "Deep · 150 cards for meaningful conversations"}, "fr": {"title": "Profond – allumons des conversations profondes", "brand": "Pro<em>fond</em>", "tagline": "allumons des conversations profondes", "hashtag": "#SansBlabla", "cta_play": "Jouer en ligne →", "cta_about": "Qu'est-ce que Profond ?", "scroll": "défiler vers le bas", "intro_eyebrow": "Parlons vraiment", "intro_h2": "Ayons des conversations <em>qui ont du sens</em>, partout dans le monde !", "intro_lead": "Connais-tu vraiment les gens qui t'entourent ? Apprenez à vous connaître avec ce jeu de questions sans-échange (trade-free).", "p1h": "Un pont entre les gens", "p1p": "Il rapproche les personnes et crée de vrais liens, au-delà des banalités.", "p2h": "Un déclencheur de conversations", "p2p": "Une bonne question ouvre des portes que tu ne soupçonnais pas. Le reste vient tout seul.", "p3h": "Un jeu sans-échange", "p3p": "Tu n'as rien à donner en retour pour jouer. Pas d'argent, pas de données, rien. C'est sans-échange (trade-free) 🙂", "might_eyebrow": "Ce qui pourrait arriver", "might_h2": "Tu pourrais…", "m1": "vraiment connaître les gens avec qui tu passes du temps", "m2": "développer plus de profondeur en toi-même", "m3": "tomber amoureux(se) de quelqu'un qui te plaît", "m4": "parler de sujets et d'idées vraiment intéressants", "ways_eyebrow": "Des règles simples, des possibilités infinies", "ways_h2": "Façons de <em>jouer</em>", "w1h": "Pioche &amp; Réponds", "w1who": "idéal pour 2–6 personnes", "w1p": "Une personne pioche une carte, la lit à voix haute et répond à la question. Quiconque le souhaite peut aussi répondre. Les discussions peuvent durer autant que vous voulez. Puis la personne suivante pioche une carte, et ainsi de suite.", "w2h": "Devine", "w2who": "idéal pour 2–6 personnes", "w2p": "Une personne pioche une carte, la lit à voix haute, et les autres essaient de deviner quelles seraient ses réponses à la question. Les discussions peuvent durer autant que vous voulez. Puis la personne suivante pioche une carte, et ainsi de suite.", "w3h": "Déclencheur de conversations", "w3who": "idéal pour 4–20 personnes", "w3p": "Lors d'une rencontre en groupe, chaque nouvelle personne qui se joint peut piocher une carte et répondre à la question. Celles déjà présentes peuvent ajouter d'autres questions.", "w4h": "SansRéponse – PasseÀl'Action", "w4who": "idéal pour 2–10 personnes", "w4p": "On pioche une carte ; la personne A décide si elle veut répondre. Sinon, jusqu'à 3 personnes peuvent proposer des actions alternatives qu'elle doit accomplir. Elle en choisit une. Les actions peuvent aussi être définies à l'avance. Puis la personne suivante pioche une carte…", "play_eyebrow": "Jouer en ligne", "play_h2": "Pioche une carte et <em>commence</em>", "play_lead": "Voici les questions pour jouer en ligne, classées en blocs de 10 questions chacun. Touche n'importe quelle carte pour la retourner.", "draw_tag": "appuie sur un bouton", "draw_text": "Pioche une carte au hasard ou mélange tout le paquet et laisse la conversation couler…", "draw_btn": "🎴 Carte au hasard", "shuffle_btn": "🔀 Mélanger le paquet", "next_btn": "⏭️ Carte suivante", "deck_shuffled": "Paquet mélangé ! Appuie sur « Carte suivante ».", "deck_done": "Tu as parcouru tout le paquet 🎉 Mélange à nouveau.", "offline_eyebrow": "Jouer hors ligne", "offline_h2": "Imprime les <em>cartes</em> toi-même", "offline_lead": "Génère les 150 cartes sur une feuille prête à imprimer (ou enregistre en PDF), puis découpe-les et range-les dans une boîte. Ou télécharge les questions en fichier texte.", "offline_print": "🖨️ Imprimer les cartes (PDF)", "offline_txt": "📄 Télécharger les questions (texte)", "off_b1h": "Le jeu de cartes de base", "off_b1p": "Appuie sur « Imprimer », choisis « Enregistrer en PDF » dans la boîte de dialogue et tu obtiendras les 150 questions, 3 par ligne, prêtes à découper.", "off_b2h": "Façons de jouer &amp; boîte", "off_b2p": "Utilise les 4 façons de jouer ci-dessus. Rassemble les cartes découpées dans une petite boîte et tu auras le jeu complet, sans-échange, où que tu ailles.", "contact_eyebrow": "Contribue", "contact_h2": "Contact", "contact_lead": "Tu as une bonne question qui manque au jeu, des suggestions, ou tu veux traduire ce jeu dans ta langue ? Écris-nous avec plaisir 🙂", "f_name": "Ton nom (obligatoire)", "f_email": "Ton e-mail (obligatoire)", "f_subject": "Sujet", "f_message": "Ton message", "f_submit": "Envoyer le message", "f_sent": "Merci ! Ton message est prêt. 🙂", "f_about": "À propos", "f_play": "Jouer en ligne", "f_offline": "Jouer hors ligne", "f_contact": "Contact", "f_fine": "Ceci est un jeu de questions <strong>sans-échange</strong> (trade-free).<br>Adaptation roumaine / anglaise / française de <a href=\"https://deepcards.org/\" target=\"_blank\" rel=\"noopener\">deepcards.org</a> · projet de l'écosystème <a href=\"https://www.tiotrom.com/\" target=\"_blank\" rel=\"noopener\">TROM</a>.", "f_vol": "Réalisé avec soin par Alexio, bénévole TROM 🤲", "print_head": "Profond · 150 cartes pour des conversations qui ont du sens"}};
+const BLOCKS = [{"title": {"ro": "Blocul 1 · întrebări de introducere", "en": "Block 1 · introduction questions", "fr": "Bloc 1 · questions d'introduction"}, "tag": {"ro": "introducere", "en": "introduction", "fr": "introduction"}, "q": [{"ro": "Ce îți place să faci?", "en": "What do you like to do?", "fr": "Qu'aimes-tu faire ?"}, {"ro": "Care e tipul tău preferat de mâncare?", "en": "What is your favourite type of food?", "fr": "Quel est ton type de nourriture préféré ?"}, {"ro": "Ce fel de muzică îți place?", "en": "What kind of music do you like?", "fr": "Quel genre de musique aimes-tu ?"}, {"ro": "Ce te face fericit(ă)?", "en": "What makes you happy?", "fr": "Qu'est-ce qui te rend heureux(se) ?"}, {"ro": "Ce nu-ți place să faci?", "en": "What do you not like to do?", "fr": "Qu'est-ce que tu n'aimes pas faire ?"}, {"ro": "Ce te motivează?", "en": "What motivates you?", "fr": "Qu'est-ce qui te motive ?"}, {"ro": "Ce te fascinează?", "en": "What fascinates you?", "fr": "Qu'est-ce qui te fascine ?"}, {"ro": "Ce nu-ți place deloc?", "en": "What do you not like at all?", "fr": "Qu'est-ce que tu n'aimes pas du tout ?"}, {"ro": "Descrie-ți ziua perfectă.", "en": "Describe your perfect day.", "fr": "Décris ta journée parfaite."}, {"ro": "Care e cartea ta preferată și de ce?", "en": "What is your favourite book and why?", "fr": "Quel est ton livre préféré et pourquoi ?"}]}, {"title": {"ro": "Blocul 2 · scenarii", "en": "Block 2 · scenarios", "fr": "Bloc 2 · scénarios"}, "tag": {"ro": "scenarii", "en": "scenarios", "fr": "scénarios"}, "q": [{"ro": "Care e primul lucru pe care îl faci când te trezești?", "en": "What is the first thing you do when you wake up?", "fr": "Quelle est la première chose que tu fais en te réveillant ?"}, {"ro": "Ai un interes/o trăsătură la care nimeni nu s-ar aștepta de la tine?", "en": "Do you have an interest or trait that no one would expect from you?", "fr": "As-tu un intérêt ou un trait auquel personne ne s'attendrait de ta part ?"}, {"ro": "Dacă ai fi blocat(ă) un an pe o insulă, pe cine ai vrea să ai acolo cu tine?", "en": "If you were stuck on an island for a year, who would you want there with you?", "fr": "Si tu étais bloqué(e) un an sur une île, qui voudrais-tu avoir là avec toi ?"}, {"ro": "Casa ta cu toate lucrurile tale e în flăcări – ce două lucruri ai salva?", "en": "Your house with all your stuff is on fire – which two things would you save?", "fr": "Ta maison avec toutes tes affaires est en flammes – quelles deux choses sauverais-tu ?"}, {"ro": "Când ești foarte leneș(ă) și demotivat(ă), care e trucul tău ca să te împingi de la spate și să te apuci iar de treabă?", "en": "When you are really lazy and unmotivated, what is your trick to push yourself and start doing something again?", "fr": "Quand tu es très paresseux(se) et démotivé(e), quelle est ton astuce pour te pousser et te remettre au travail ?"}, {"ro": "Dacă ai fi sigur(ă) că ți s-ar vinde cartea de 100.000 de ori – despre ce ai scrie?", "en": "If you were sure that your book would be sold 100,000 times – what would you write about?", "fr": "Si tu étais sûr(e) que ton livre se vendrait à 100 000 exemplaires – sur quoi écrirais-tu ?"}, {"ro": "Ce ai face dacă ai fi președinte?", "en": "What would you do if you were president?", "fr": "Que ferais-tu si tu étais président(e) ?"}, {"ro": "Dacă ai putea schimba ceva la felul în care ai fost crescut(ă) – ce ar fi?", "en": "If you could change something about the way you were raised – what would it be?", "fr": "Si tu pouvais changer quelque chose à la façon dont tu as été élevé(e) – qu'est-ce que ce serait ?"}, {"ro": "Dacă te-ai trezi mâine cu o nouă abilitate – care ar fi?", "en": "If you could wake up with a new skill tomorrow – what would it be?", "fr": "Si tu pouvais te réveiller demain avec une nouvelle compétence – laquelle serait-ce ?"}, {"ro": "Dacă ai muri diseară fără șansa de a mai vorbi cu cineva înainte – ce ai regreta că nu i-ai spus cuiva? De ce nu i-ai spus deja?", "en": "If you died this evening without the chance to speak to anyone first – what would you regret not having told someone? Why haven't you told them already?", "fr": "Si tu mourais ce soir sans avoir la chance de parler à quiconque avant – que regretterais-tu de ne pas avoir dit à quelqu'un ? Pourquoi ne le lui as-tu pas déjà dit ?"}]}, {"title": {"ro": "Blocul 3 · profund", "en": "Block 3 · deep", "fr": "Bloc 3 · profond"}, "tag": {"ro": "profund", "en": "deep", "fr": "profond"}, "q": [{"ro": "Cine ești tu?", "en": "Who are you?", "fr": "Qui es-tu ?"}, {"ro": "Ce mai faci… cu adevărat?", "en": "How are you… really?", "fr": "Comment vas-tu… vraiment ?"}, {"ro": "Ce vrei să realizezi în viață?", "en": "What do you want to achieve in life?", "fr": "Que veux-tu accomplir dans la vie ?"}, {"ro": "Cum faci față anxietății?", "en": "How do you deal with anxiety?", "fr": "Comment gères-tu l'anxiété ?"}, {"ro": "Povestește-ți viața în 4 minute, cât mai detaliat posibil.", "en": "Share your life story in 4 minutes, as detailed as possible.", "fr": "Raconte l'histoire de ta vie en 4 minutes, le plus en détail possible."}, {"ro": "Care e cea mai mare realizare a ta?", "en": "What is your biggest achievement?", "fr": "Quelle est ta plus grande réussite ?"}, {"ro": "Care e pasiunea ta?", "en": "What is your passion?", "fr": "Quelle est ta passion ?"}, {"ro": "Pe o scară de la 1 la 10, cât de împlinit(ă) ești?", "en": "On a scale from 1 to 10, how content are you?", "fr": "Sur une échelle de 1 à 10, à quel point es-tu épanoui(e) ?"}, {"ro": "Ce trăsătură de personalitate îți place la tine?", "en": "What personality trait do you like about yourself?", "fr": "Quel trait de personnalité aimes-tu chez toi ?"}, {"ro": "Ce trăsătură de caracter apreciezi cel mai mult la tine?", "en": "What character trait do you value most in yourself?", "fr": "Quel trait de caractère apprécies-tu le plus chez toi ?"}]}, {"title": {"ro": "Blocul 4 · despre conceptul fără-troc", "en": "Block 4 · about the trade-free concept", "fr": "Bloc 4 · le concept sans-échange"}, "tag": {"ro": "fără-troc", "en": "trade-free", "fr": "sans-échange"}, "q": [{"ro": "Dacă ai avea tot ce vrei și îți trebuie fără să dai nimic în schimb (adică fără-troc), ce ți-ar plăcea să faci?", "en": "If you had everything you want and need without giving anything in return for it (thus trade-free), what would you love to do?", "fr": "Si tu avais tout ce que tu veux et dont tu as besoin sans rien donner en retour (donc sans-échange), qu'aimerais-tu faire ?"}, {"ro": "Ai pus vreodată sub semnul întrebării conceptul de troc/schimb?", "en": "Have you ever questioned the concept of trade?", "fr": "As-tu déjà remis en question le concept d'échange ?"}, {"ro": "Ce lucru sau activitate fără-troc îți place?", "en": "What trade-free thing or activity do you like?", "fr": "Quelle chose ou activité sans-échange aimes-tu ?"}, {"ro": "Te-ai gândit vreodată la troc ca la originea majorității problemelor, ca o forță care îi poate împinge pe oameni să creeze probleme?", "en": "Have you ever thought about trade as the origin of most problems, acting as a force that can push people to create problems?", "fr": "As-tu déjà pensé à l'échange comme à l'origine de la plupart des problèmes, telle une force qui peut pousser les gens à en créer ?"}, {"ro": "Prieteniile tale sunt fără-troc?", "en": "Are your friendships trade-free?", "fr": "Tes amitiés sont-elles sans-échange ?"}, {"ro": "Care troc e cel mai rău pentru tine?", "en": "Which trade is the worst for you?", "fr": "Quel échange est le pire pour toi ?"}, {"ro": "Îți poți imagina o lume plină de voluntari, proiecte open-source și bunuri/servicii fără-troc?", "en": "Can you imagine a world full of volunteers, open-source projects and trade-free goods and services?", "fr": "Peux-tu imaginer un monde plein de bénévoles, de projets open-source et de biens/services sans-échange ?"}, {"ro": "Care e bunul sau serviciul tău preferat fără-troc?", "en": "What is your favourite trade-free good or service?", "fr": "Quel est ton bien ou service sans-échange préféré ?"}, {"ro": "Ce ai putea face ca să susții sau să promovezi ideea fără-troc?", "en": "What could you do to support or promote the trade-free idea?", "fr": "Que pourrais-tu faire pour soutenir ou promouvoir l'idée du sans-échange ?"}, {"ro": "Ce lucru ai vrea să-l vezi mai întâi devenind fără-troc?", "en": "What would you love to see become trade-free first?", "fr": "Quelle chose aimerais-tu voir devenir sans-échange en premier ?"}]}, {"title": {"ro": "Blocul 5 · aleatoriu", "en": "Block 5 · random", "fr": "Bloc 5 · aléatoire"}, "tag": {"ro": "aleatoriu", "en": "random", "fr": "aléatoire"}, "q": [{"ro": "Ce faci ca să te calmezi?", "en": "What do you do to calm down?", "fr": "Que fais-tu pour te calmer ?"}, {"ro": "Ce înveți în prezent în viață?", "en": "What are you currently learning in life?", "fr": "Qu'apprends-tu en ce moment dans la vie ?"}, {"ro": "Descrie-te în trei cuvinte.", "en": "Describe yourself in three words.", "fr": "Décris-toi en trois mots."}, {"ro": "Dacă ai putea întâlni orice persoană care a trăit vreodată, pe cine ai vrea să întâlnești?", "en": "If you could meet any person who ever lived, who would you want to meet?", "fr": "Si tu pouvais rencontrer n'importe quelle personne ayant vécu, qui voudrais-tu rencontrer ?"}, {"ro": "Ce faci când o decizie e dificilă pentru tine?", "en": "What do you do when a decision is difficult for you?", "fr": "Que fais-tu quand une décision est difficile pour toi ?"}, {"ro": "Îți place să faci voluntariat? Dacă da, pentru ce?", "en": "Do you like to volunteer? If yes, for what?", "fr": "Aimes-tu faire du bénévolat ? Si oui, pour quoi ?"}, {"ro": "Unde te vezi peste 10 ani?", "en": "Where do you see yourself in 10 years?", "fr": "Où te vois-tu dans 10 ans ?"}, {"ro": "Numește 3 persoane pe care le consideri modele.", "en": "Name 3 people you consider role models.", "fr": "Nomme 3 personnes que tu considères comme des modèles."}, {"ro": "Cum te descriu prietenii tăi?", "en": "How do your friends describe you?", "fr": "Comment tes amis te décrivent-ils ?"}, {"ro": "Există ceva fără de care nu ai putea trăi?", "en": "Is there something you couldn't live without?", "fr": "Y a-t-il quelque chose dont tu ne pourrais pas te passer ?"}]}, {"title": {"ro": "Blocul 6 · extra profund", "en": "Block 6 · extra deep", "fr": "Bloc 6 · extra profond"}, "tag": {"ro": "extra profund", "en": "extra deep", "fr": "extra profond"}, "q": [{"ro": "Povestește un moment de cotitură din viața ta.", "en": "Share a turning point in your life.", "fr": "Raconte un tournant de ta vie."}, {"ro": "Care e cel mai nebunesc sau curajos lucru pe care l-ai făcut?", "en": "What is the craziest or bravest thing you have done?", "fr": "Quelle est la chose la plus folle ou la plus courageuse que tu aies faite ?"}, {"ro": "Povestește un moment extrem de jenant din viața ta.", "en": "Share an extremely embarrassing moment of your life.", "fr": "Raconte un moment extrêmement embarrassant de ta vie."}, {"ro": "Există ceva pentru care ești deosebit de recunoscător(oare)?", "en": "Is there something you are especially thankful for?", "fr": "Y a-t-il quelque chose pour lequel tu es particulièrement reconnaissant(e) ?"}, {"ro": "Ce activități și interese sunt foarte importante pentru tine?", "en": "Which activities and interests are very important to you?", "fr": "Quelles activités et quels intérêts sont très importants pour toi ?"}, {"ro": "Ai o trăsătură sau un interes pe care nimeni nu l-ar crede? Spune-l 🙂", "en": "Do you have a trait or interest that no one would believe? Share it 🙂", "fr": "As-tu un trait ou un intérêt que personne ne croirait ? Partage-le 🙂"}, {"ro": "De ce ți-e frică?", "en": "What are you afraid of?", "fr": "De quoi as-tu peur ?"}, {"ro": "Când a fost ultima dată când ai plâns în prezența altcuiva? Și de ce?", "en": "When was the last time you cried in the presence of another person? And why?", "fr": "Quand as-tu pleuré pour la dernière fois en présence d'une autre personne ? Et pourquoi ?"}, {"ro": "Ce moștenire vrei să lași în urmă?", "en": "What legacy do you want to leave behind?", "fr": "Quel héritage veux-tu laisser derrière toi ?"}, {"ro": "Care e cel mai rău lucru care ți s-a întâmplat vreodată?", "en": "What is the worst thing that ever happened to you?", "fr": "Quelle est la pire chose qui te soit jamais arrivée ?"}]}, {"title": {"ro": "Blocul 7 · despre iubire", "en": "Block 7 · about love", "fr": "Bloc 7 · l'amour"}, "tag": {"ro": "iubire", "en": "love", "fr": "amour"}, "q": [{"ro": "Ce înseamnă iubirea pentru tine?", "en": "What does love mean to you?", "fr": "Que signifie l'amour pour toi ?"}, {"ro": "Vrei să ai copii?", "en": "Do you want to have children?", "fr": "Veux-tu avoir des enfants ?"}, {"ro": "Ce e esențial pentru tine într-o relație?", "en": "What is essential for you in a relationship?", "fr": "Qu'est-ce qui est essentiel pour toi dans une relation ?"}, {"ro": "La ce lucruri din viața ta nu vei face niciodată compromisuri?", "en": "What things in your life will you never compromise on?", "fr": "Sur quelles choses de ta vie ne feras-tu jamais de compromis ?"}, {"ro": "Ce înseamnă frumusețea pentru tine?", "en": "What does beauty mean to you?", "fr": "Que signifie la beauté pour toi ?"}, {"ro": "Când și cu cine te simți cel mai vulnerabil(ă)?", "en": "When and with whom do you feel most vulnerable?", "fr": "Quand et avec qui te sens-tu le plus vulnérable ?"}, {"ro": "Descrie-ți partenerul ideal.", "en": "Describe your ideal partner.", "fr": "Décris ton/ta partenaire idéal(e)."}, {"ro": "Ai fost vreodată îndrăgostit(ă) de cineva?", "en": "Have you ever been in love with someone?", "fr": "As-tu déjà été amoureux(se) de quelqu'un ?"}, {"ro": "Care sunt părțile esențiale ale unei prietenii minunate pentru tine?", "en": "What are the crucial parts of an awesome friendship for you?", "fr": "Quelles sont, pour toi, les parties essentielles d'une amitié formidable ?"}, {"ro": "Dacă vrei să povestești despre o pasiune sau iubire din trecut, cum v-ați cunoscut?", "en": "If you want to share a story of a past crush or love, how did you meet?", "fr": "Si tu veux raconter l'histoire d'un coup de cœur ou d'un amour passé, comment vous êtes-vous rencontrés ?"}]}, {"title": {"ro": "Blocul 8 · aici și acum", "en": "Block 8 · here and now", "fr": "Bloc 8 · ici et maintenant"}, "tag": {"ro": "aici și acum", "en": "here and now", "fr": "ici et maintenant"}, "q": [{"ro": "Ce te fascinează la cineva care stă aici, lângă tine?", "en": "What fascinates you about someone sitting here?", "fr": "Qu'est-ce qui te fascine chez quelqu'un assis ici ?"}, {"ro": "Dacă ai putea călători în timp și ai privi înapoi la viața ta de la 80 de ani, ce sfat ți-ai da pentru situația ta actuală?", "en": "If you could travel in time and look back on your life at 80, what advice would you give yourself for your current situation?", "fr": "Si tu pouvais voyager dans le temps et regarder ta vie depuis tes 80 ans, quel conseil te donnerais-tu pour ta situation actuelle ?"}, {"ro": "Dacă ai muri mâine, ce ai face azi?", "en": "If you would die tomorrow, what would you do today?", "fr": "Si tu devais mourir demain, que ferais-tu aujourd'hui ?"}, {"ro": "La ce te gândești în acest moment?", "en": "What's on your mind at the moment?", "fr": "À quoi penses-tu en ce moment ?"}, {"ro": "Alege o persoană din încăpere și spune-i de ce îi ești recunoscător(oare).", "en": "Choose one person in the room and tell them why you are thankful for them.", "fr": "Choisis une personne dans la pièce et dis-lui pourquoi tu lui es reconnaissant(e)."}, {"ro": "Descrie timp de un minut cum te simți cu adevărat în acest moment.", "en": "Describe for one minute how you really feel in this moment.", "fr": "Décris pendant une minute comment tu te sens vraiment en cet instant."}, {"ro": "Ce ți-ar plăcea să faci chiar în acest moment?", "en": "What would you love to do in this moment?", "fr": "Qu'aimerais-tu faire en cet instant ?"}, {"ro": "Cum e să faci parte din univers și să trăiești chiar acest moment?", "en": "How does it feel to be part of the universe and experience this very moment?", "fr": "Quel effet cela fait-il de faire partie de l'univers et de vivre cet instant précis ?"}, {"ro": "Ce melodie anume ți-ar plăcea să asculți chiar acum?", "en": "What particular song would you love to listen to right now?", "fr": "Quelle chanson précise aimerais-tu écouter tout de suite ?"}, {"ro": "Pentru ce ești recunoscător(oare) chiar acum?", "en": "What are you grateful for right now?", "fr": "De quoi es-tu reconnaissant(e) en ce moment ?"}]}, {"title": {"ro": "Blocul 9 · aleatoriu", "en": "Block 9 · random", "fr": "Bloc 9 · aléatoire"}, "tag": {"ro": "aleatoriu", "en": "random", "fr": "aléatoire"}, "q": [{"ro": "Ești optimist(ă), pesimist(ă) sau realist(ă)? De ce?", "en": "Are you an optimist, pessimist or realist? Why?", "fr": "Es-tu optimiste, pessimiste ou réaliste ? Pourquoi ?"}, {"ro": "Care sunt plăcerile tale vinovate?", "en": "What are your guilty pleasures?", "fr": "Quels sont tes plaisirs coupables ?"}, {"ro": "Care sunt cele mai mari puncte forte ale tale?", "en": "What are your greatest strengths?", "fr": "Quelles sont tes plus grandes forces ?"}, {"ro": "Care e cea mai importantă zi a anului pentru tine (dacă ai una)? De ce?", "en": "What is the most important day of the year for you (if you have one)? Why?", "fr": "Quel est le jour le plus important de l'année pour toi (si tu en as un) ? Pourquoi ?"}, {"ro": "Despre ce subiect de conversație îți e confortabil să vorbești?", "en": "What topic of conversation is comfortable for you to talk about?", "fr": "De quel sujet de conversation es-tu à l'aise de parler ?"}, {"ro": "Există un cântec din copilărie pe care încă ți-l amintești? Cântă-l.", "en": "Is there a childhood song you still remember? Sing it.", "fr": "Y a-t-il une chanson d'enfance dont tu te souviens encore ? Chante-la."}, {"ro": "Ce te fascinează la planeta Pământ?", "en": "What fascinates you about planet Earth?", "fr": "Qu'est-ce qui te fascine à propos de la planète Terre ?"}, {"ro": "Spune trei lucruri care te-au făcut foarte fericit(ă) luna asta.", "en": "Share three things that made you very happy this month.", "fr": "Partage trois choses qui t'ont rendu(e) très heureux(se) ce mois-ci."}, {"ro": "Dacă ai putea călători înapoi în timp la vârsta de 10 ani – ce sfat i-ai da eului tău mai tânăr?", "en": "If you could travel back in time to the age of 10 – what advice would you give your younger self?", "fr": "Si tu pouvais remonter le temps jusqu'à tes 10 ans – quel conseil donnerais-tu à ton toi plus jeune ?"}, {"ro": "Cum ai schimba lumea dacă ai avea 5 miliarde de dolari?", "en": "How would you change the world if you had 5 billion dollars?", "fr": "Comment changerais-tu le monde si tu avais 5 milliards de dollars ?"}]}, {"title": {"ro": "Blocul 10 · aleatoriu", "en": "Block 10 · random", "fr": "Bloc 10 · aléatoire"}, "tag": {"ro": "aleatoriu", "en": "random", "fr": "aléatoire"}, "q": [{"ro": "Dacă ai putea învăța o abilitate nouă, care ar fi?", "en": "If you could learn a new skill, what would it be?", "fr": "Si tu pouvais apprendre une nouvelle compétence, laquelle serait-ce ?"}, {"ro": "Povestește un moment din trecut în care te-ai simțit cel mai aproape de moarte.", "en": "Share a moment from your past when you felt closest to death.", "fr": "Raconte un moment de ton passé où tu t'es senti(e) le plus proche de la mort."}, {"ro": "Există un subiect despre care nimeni n-ar trebui să facă glume?", "en": "Is there a topic about which no one should make jokes?", "fr": "Y a-t-il un sujet sur lequel personne ne devrait faire de blagues ?"}, {"ro": "Care sunt lucrurile inacceptabile pentru tine într-o prietenie?", "en": "What are your deal breakers in friendships?", "fr": "Quelles sont tes limites infranchissables en amitié ?"}, {"ro": "Moartea cărui membru al familiei ar fi cea mai grea pentru tine?", "en": "Which family member's death would be hardest for you?", "fr": "La mort de quel membre de ta famille serait la plus difficile pour toi ?"}, {"ro": "Dacă ai putea dobândi un talent nou peste noapte, care ar fi?", "en": "If you could gain a new talent overnight, what would it be?", "fr": "Si tu pouvais acquérir un nouveau talent du jour au lendemain, lequel serait-ce ?"}, {"ro": "Care e cea mai importantă masă a zilei pentru tine?", "en": "What is the most important meal of the day for you?", "fr": "Quel est le repas le plus important de la journée pour toi ?"}, {"ro": "Ce înseamnă credința pentru tine?", "en": "What does belief or faith mean to you?", "fr": "Que signifie la croyance ou la foi pour toi ?"}, {"ro": "Povestește o experiență dintr-o perioadă în care nu aveai deloc bani (sau foarte puțini) – ce ai făcut ca să supraviețuiești?", "en": "Share an experience from a time you had no money (or very little) – what did you do to survive?", "fr": "Raconte une expérience d'une époque où tu n'avais pas d'argent (ou très peu) – qu'as-tu fait pour survivre ?"}, {"ro": "Te temi de moarte?", "en": "Do you fear death?", "fr": "Crains-tu la mort ?"}]}, {"title": {"ro": "Blocul 11 · întrebări din comunitate", "en": "Block 11 · community questions", "fr": "Bloc 11 · questions de la communauté"}, "tag": {"ro": "comunitate", "en": "community", "fr": "communauté"}, "q": [{"ro": "Cum crezi că iertarea contribuie la construirea unei comunități mai puternice și mai unite?", "en": "How do you believe forgiveness contributes to building a stronger and more cohesive community?", "fr": "Comment penses-tu que le pardon contribue à bâtir une communauté plus forte et plus soudée ?"}, {"ro": "În opinia ta, ce rol joacă empatia în procesul de a oferi a doua șansă în cadrul unei comunități?", "en": "In your opinion, what role does empathy play in the process of granting second chances within a community?", "fr": "À ton avis, quel rôle joue l'empathie dans le fait d'accorder une seconde chance au sein d'une communauté ?"}, {"ro": "Poți împărtăși o experiență personală în care iertarea a jucat un rol decisiv în rezolvarea unui conflict din comunitate?", "en": "Can you share a personal experience where forgiveness played a pivotal role in resolving a community conflict?", "fr": "Peux-tu partager une expérience personnelle où le pardon a joué un rôle décisif dans la résolution d'un conflit communautaire ?"}, {"ro": "Cum influențează valorile culturale sau sociale felul în care iertarea este percepută și practicată în comunitatea ta?", "en": "How do cultural or societal values influence the way forgiveness is perceived and practised in your community?", "fr": "Comment les valeurs culturelles ou sociales influencent-elles la façon dont le pardon est perçu et pratiqué dans ta communauté ?"}, {"ro": "Crezi că există anumite fapte care sunt de neiertat în context comunitar și, dacă da, care sunt acelea?", "en": "Do you think there are certain actions that are unforgivable within a community context, and if so, what are they?", "fr": "Penses-tu qu'il existe certains actes impardonnables dans un contexte communautaire et, si oui, lesquels ?"}, {"ro": "În relațiile dintr-o comunitate, cum poți găsi echilibrul între a oferi a doua șansă și a menține responsabilitatea?", "en": "In community relationships, how can one strike a balance between offering second chances and maintaining accountability?", "fr": "Dans les relations au sein d'une communauté, comment trouver l'équilibre entre offrir une seconde chance et maintenir la responsabilité ?"}, {"ro": "Ce strategii sau inițiative crezi că pot fi implementate pentru a cultiva o cultură a iertării și a reconcilierii într-o comunitate?", "en": "What strategies or initiatives do you think can be implemented to foster a culture of forgiveness and reconciliation in a community?", "fr": "Quelles stratégies ou initiatives penses-tu qu'on pourrait mettre en place pour cultiver une culture du pardon et de la réconciliation dans une communauté ?"}, {"ro": "Cum se aliniază conceptul de iertare cu principiile justiției restaurative și cum ar putea fi aplicat într-un cadru comunitar?", "en": "How does the concept of forgiveness align with the principles of restorative justice, and how might it be applied in a community setting?", "fr": "Comment le concept de pardon s'aligne-t-il avec les principes de la justice réparatrice, et comment pourrait-il s'appliquer dans un cadre communautaire ?"}, {"ro": "Există situații în care a doua șansă a dus la transformări pozitive în comunitate? Poți da exemple?", "en": "Are there instances where second chances have led to positive transformations within the community? Can you provide examples?", "fr": "Y a-t-il des cas où une seconde chance a mené à des transformations positives dans la communauté ? Peux-tu donner des exemples ?"}, {"ro": "În vremuri de conflict, cum poate o comunitate să lucreze împreună spre vindecare și iertare, în loc să perpetueze un ciclu de resentimente?", "en": "In times of conflict, how can a community collectively work towards healing and forgiveness, rather than perpetuating a cycle of resentment?", "fr": "En temps de conflit, comment une communauté peut-elle œuvrer ensemble vers la guérison et le pardon, plutôt que de perpétuer un cycle de ressentiment ?"}]}, {"title": {"ro": "Blocul 12 · comunitate – extra profund", "en": "Block 12 · community questions – extra deep", "fr": "Bloc 12 · communauté – extra profond"}, "tag": {"ro": "comunitate · profund", "en": "community · deep", "fr": "communauté · profond"}, "q": [{"ro": "Poți descrie un moment de cotitură anume din viața ta care ți-a pus la încercare convingerile și ți-a schimbat fundamental perspectiva asupra lumii?", "en": "Can you describe a specific turning point in your life that challenged your preconceived notions and fundamentally altered your perspective on the world?", "fr": "Peux-tu décrire un tournant précis de ta vie qui a remis en cause tes idées reçues et a fondamentalement changé ta vision du monde ?"}, {"ro": "Cum a influențat un moment de cotitură important din viața ta scopurile și aspirațiile pe care ți le-ai stabilit și ce drumuri noi ți-a deschis?", "en": "How did a significant turning point in your life influence the goals and aspirations you set for yourself, and what new paths did it open up?", "fr": "Comment un tournant important de ta vie a-t-il influencé les objectifs et aspirations que tu t'es fixés, et quelles nouvelles voies a-t-il ouvertes ?"}, {"ro": "Reflectând la un moment de cotitură, ce emoții sau conflicte interioare ai trăit și cum le-ai gestionat ca să mergi mai departe?", "en": "Reflecting on a turning point, what emotions or internal conflicts did you experience, and how did you navigate them to move forward?", "fr": "En réfléchissant à un tournant, quelles émotions ou conflits intérieurs as-tu vécus, et comment les as-tu surmontés pour avancer ?"}, {"ro": "A dus momentul de cotitură la o redescoperire a valorilor tale și, dacă da, cum ți-a remodelat prioritățile și deciziile?", "en": "Did the turning point lead to a rediscovery of your values, and if so, how did it reshape your priorities and decision-making?", "fr": "Le tournant a-t-il mené à une redécouverte de tes valeurs et, si oui, comment a-t-il remodelé tes priorités et tes décisions ?"}, {"ro": "În urma unui moment crucial, cum s-au schimbat relațiile tale cu ceilalți și ți-a afectat sentimentul de apartenență la cercurile tale sociale?", "en": "In the aftermath of a pivotal moment, how did your relationships with others change, and did it affect your sense of belonging within your social circles?", "fr": "Après un moment décisif, comment tes relations avec les autres ont-elles changé, et cela a-t-il affecté ton sentiment d'appartenance à tes cercles sociaux ?"}, {"ro": "Au existat factori externi sau persoane care au jucat un rol crucial în rezultatul acelui moment de cotitură și cum te-a influențat prezența lor?", "en": "Were there external factors or individuals who played a crucial role in shaping the outcome of the turning point, and how did their influence impact your journey?", "fr": "Y a-t-il eu des facteurs externes ou des personnes ayant joué un rôle crucial dans l'issue de ce tournant, et comment leur influence a-t-elle marqué ton parcours ?"}, {"ro": "Cum a influențat momentul de cotitură felul în care te percepi pe tine însuți/însăți și a contribuit la creșterea personală sau la o redefinire a identității tale?", "en": "How did the turning point impact your self-perception, and did it contribute to personal growth or a redefinition of your identity?", "fr": "Comment le tournant a-t-il influencé la perception que tu as de toi-même, et a-t-il contribué à ta croissance personnelle ou à une redéfinition de ton identité ?"}, {"ro": "Ce moment ți-a arătat cât de mult te poți schimba și cum ai dus mai departe acea lecție?", "en": "What moment showed you how much you can change, and how did you carry that lesson forward?", "fr": "Quel moment t'a montré à quel point tu peux changer, et comment as-tu porté cette leçon plus loin ?"}, {"ro": "Cum integrezi lecțiile învățate dintr-un moment de cotitură în viața de zi cu zi și ce practici te ajută să-ți menții un sens și o direcție?", "en": "How do you integrate the lessons learned from a turning point into your daily life, and what practices help you maintain a sense of purpose and direction?", "fr": "Comment intègres-tu les leçons tirées d'un tournant dans ta vie quotidienne, et quelles pratiques t'aident à garder un sens et une direction ?"}, {"ro": "Privind în urmă, vezi momentul de cotitură ca pe un singur eveniment transformator sau ca pe o serie de momente interconectate care, împreună, ți-au modelat drumul în viață?", "en": "Looking back, do you see the turning point as a single, transformative event, or as part of a series of interconnected moments that collectively shaped your life journey?", "fr": "Avec le recul, vois-tu le tournant comme un seul événement transformateur, ou comme une série de moments interconnectés qui, ensemble, ont façonné ton parcours de vie ?"}]}, {"title": {"ro": "Blocul 13 · comunitate – iubire", "en": "Block 13 · community questions – love", "fr": "Bloc 13 · communauté – amour"}, "tag": {"ro": "comunitate · iubire", "en": "community · love", "fr": "communauté · amour"}, "q": [{"ro": "Poți împărtăși o experiență semnificativă dintr-o relație din trecut care ți-a influențat profund dezvoltarea personală și înțelegerea de sine?", "en": "Can you share a meaningful experience from a past relationship that significantly impacted your personal growth and understanding of yourself?", "fr": "Peux-tu partager une expérience marquante d'une relation passée qui a profondément influencé ta croissance personnelle et la compréhension de toi-même ?"}, {"ro": "Cum navighezi echilibrul dintre a-ți păstra individualitatea și a construi o legătură profundă atunci când ești implicat(ă) romantic cu cineva?", "en": "How do you navigate the balance between maintaining individuality and building a deep connection when involved with someone romantically?", "fr": "Comment gères-tu l'équilibre entre préserver ton individualité et bâtir un lien profond lorsque tu es engagé(e) romantiquement avec quelqu'un ?"}, {"ro": "În momentele de conflict dintr-o relație, cum abordezi rezolvarea și cum te asiguri că ambii parteneri se simt ascultați și înțeleși?", "en": "In times of conflict within a relationship, how do you approach resolution and ensure that both parties feel heard and understood?", "fr": "En cas de conflit dans une relation, comment abordes-tu la résolution et t'assures-tu que les deux personnes se sentent écoutées et comprises ?"}, {"ro": "Ai trăit vreodată un moment de cotitură într-o relație romantică ce a dus la o schimbare profundă a perspectivelor sau priorităților tale? Dacă da, care a fost?", "en": "Have you ever experienced a turning point in a romantic relationship that led to a profound shift in your perspectives or priorities? If so, what was it?", "fr": "As-tu déjà vécu un tournant dans une relation amoureuse qui a entraîné un changement profond de tes perspectives ou priorités ? Si oui, lequel ?"}, {"ro": "Cum contribuie relațiile tale romantice din trecut la așteptările și aspirațiile tale actuale în relații?", "en": "How do your past romantic involvements contribute to your present expectations and aspirations in relationships?", "fr": "Comment tes relations amoureuses passées contribuent-elles à tes attentes et aspirations actuelles en matière de relations ?"}, {"ro": "Poți descrie o situație în care implicarea cu cineva ți-a pus la încercare convingerile sau te-a împins în afara zonei de confort, ducând la o transformare personală?", "en": "Can you describe a situation where being involved with someone challenged your beliefs or pushed you outside your comfort zone, leading to personal transformation?", "fr": "Peux-tu décrire une situation où être lié(e) à quelqu'un a remis en cause tes convictions ou t'a poussé(e) hors de ta zone de confort, menant à une transformation personnelle ?"}, {"ro": "Ce rol joacă vulnerabilitatea în relațiile tale și cum navighezi deschiderea emoțională față de cineva?", "en": "What role does vulnerability play in your relationships, and how do you navigate opening up to someone emotionally?", "fr": "Quel rôle joue la vulnérabilité dans tes relations, et comment gères-tu le fait de t'ouvrir émotionnellement à quelqu'un ?"}, {"ro": "Reflectând la experiențele tale, cum ți-au evoluat în timp valorile și prioritățile în relații?", "en": "Reflecting on your experiences, how have your values and priorities in relationships evolved over time?", "fr": "En réfléchissant à tes expériences, comment tes valeurs et priorités dans les relations ont-elles évolué avec le temps ?"}, {"ro": "Cum îți menții un sentiment de autonomie și independență atunci când ești implicat(ă) cu cineva și cât de important e pentru tine acest echilibru?", "en": "How do you maintain a sense of autonomy and independence while being involved with someone, and how important is this balance to you?", "fr": "Comment conserves-tu un sentiment d'autonomie et d'indépendance tout en étant engagé(e) avec quelqu'un, et quelle importance accordes-tu à cet équilibre ?"}, {"ro": "Ai găsit vreodată inspirație sau creștere personală sprijinind pe altcineva în drumul său și cum ți-a influențat asta propria dezvoltare?", "en": "Have you ever found inspiration or personal growth through supporting someone else on their journey, and how has this impacted your own development?", "fr": "As-tu déjà trouvé de l'inspiration ou une croissance personnelle en soutenant quelqu'un d'autre dans son cheminement, et comment cela a-t-il influencé ton propre développement ?"}]}, {"title": {"ro": "Blocul 14 · comunitate – profund", "en": "Block 14 · community questions – deep", "fr": "Bloc 14 · communauté – profond"}, "tag": {"ro": "comunitate · identitate", "en": "community · identity", "fr": "communauté · identité"}, "q": [{"ro": "Dincolo de nume, profesie și roluri, ce aspecte ale identității tale simți că te definesc cu adevărat ca individ?", "en": "Beyond your name, profession and roles, what aspects of your identity do you feel truly define who you are as an individual?", "fr": "Au-delà de ton nom, de ta profession et de tes rôles, quels aspects de ton identité sens-tu qui te définissent vraiment en tant qu'individu ?"}, {"ro": "Cum ți-a modelat trecutul înțelegerea actuală de sine și ce experiențe-cheie au contribuit la sentimentul tău de identitate?", "en": "How has your past shaped your present understanding of yourself, and what key experiences have contributed to your sense of identity?", "fr": "Comment ton passé a-t-il façonné la compréhension actuelle de toi-même, et quelles expériences clés ont contribué à ton sentiment d'identité ?"}, {"ro": "În momentele de introspecție, ce valori sau principii descoperi că sunt în miezul identității tale, ghidându-ți deciziile și acțiunile?", "en": "In moments of self-reflection, what values or principles do you find are at the core of your identity, guiding your decisions and actions?", "fr": "Dans tes moments d'introspection, quelles valeurs ou principes trouves-tu au cœur de ton identité, guidant tes décisions et tes actions ?"}, {"ro": "Cum navighezi echilibrul dintre așteptările externe puse asupra ta și sinele tău autentic, mai ales în diverse contexte sociale și profesionale?", "en": "How do you navigate the balance between the external expectations placed on you and your authentic self, particularly in various social and professional contexts?", "fr": "Comment gères-tu l'équilibre entre les attentes externes placées sur toi et ton vrai moi, notamment dans divers contextes sociaux et professionnels ?"}, {"ro": "Poți identifica un moment de cotitură sau o revelație din viața ta care ți-a influențat semnificativ percepția de sine și sentimentul scopului?", "en": "Can you identify a specific turning point or realisation in your life that significantly influenced your self-perception and sense of purpose?", "fr": "Peux-tu identifier un tournant ou une prise de conscience précise de ta vie qui a fortement influencé la perception de toi-même et ton sens du but ?"}, {"ro": "În ce măsură contribuie relațiile tale cu ceilalți la sentimentul tău de sine și cum îți menții autenticitatea în aceste legături?", "en": "To what extent do your relationships with others contribute to your sense of self, and how do you maintain authenticity in these connections?", "fr": "Dans quelle mesure tes relations avec les autres contribuent-elles à ton sentiment de toi-même, et comment préserves-tu ton authenticité dans ces liens ?"}, {"ro": "Cum împaci natura mereu schimbătoare a identității cu dorința de stabilitate și de continuitate în viața ta?", "en": "How do you reconcile the evolving nature of identity with the desire for stability and a sense of continuity in your life?", "fr": "Comment concilies-tu la nature évolutive de l'identité avec le désir de stabilité et de continuité dans ta vie ?"}, {"ro": "În momentele de provocare sau adversitate, cum îți influențează înțelegerea propriei identități reziliența și capacitatea de a depăși obstacolele?", "en": "In moments of challenge or adversity, how does your understanding of who you are influence your resilience and ability to overcome obstacles?", "fr": "Dans les moments de défi ou d'adversité, comment ta compréhension de qui tu es influence-t-elle ta résilience et ta capacité à surmonter les obstacles ?"}, {"ro": "Crezi că dezvoltarea personală necesită o reevaluare continuă a identității și, dacă da, cum abordezi acest proces în viața ta?", "en": "Do you believe that personal growth requires a continuous reevaluation of one's identity, and if so, how do you approach this process in your own life?", "fr": "Crois-tu que la croissance personnelle exige une réévaluation continue de son identité et, si oui, comment abordes-tu ce processus dans ta propre vie ?"}, {"ro": "Dacă ar fi să te descrii prin metafore sau simboluri, care ar fi acestea și cum surprind ele esența a ceea ce ești?", "en": "If you were to describe yourself using metaphors or symbols, what would they be, and how do they encapsulate the essence of who you are?", "fr": "Si tu devais te décrire par des métaphores ou des symboles, quels seraient-ils, et comment capturent-ils l'essence de qui tu es ?"}]}, {"title": {"ro": "Blocul 15 · comunitate – aleatoriu", "en": "Block 15 · community questions – random", "fr": "Bloc 15 · communauté – aléatoire"}, "tag": {"ro": "comunitate · aleatoriu", "en": "community · random", "fr": "communauté · aléatoire"}, "q": [{"ro": "Cum stabilești granițele dintre umor și lipsa de sensibilitate și ai criterii anume pentru a evalua dacă un subiect e interzis glumelor?", "en": "How do you determine the boundaries between humour and insensitivity, and are there specific criteria you use to assess whether a topic is off-limits for jokes?", "fr": "Comment détermines-tu les limites entre l'humour et le manque de sensibilité, et as-tu des critères précis pour juger si un sujet est interdit aux blagues ?"}, {"ro": "În opinia ta, poate fi umorul un instrument de comentariu social pe teme sensibile sau anumite subiecte ar trebui tratate mereu cu seriozitate și gravitate?", "en": "In your opinion, can humour be a tool for social commentary on sensitive topics, or should certain subjects always be treated with solemnity and seriousness?", "fr": "À ton avis, l'humour peut-il être un outil de commentaire social sur des sujets sensibles, ou certains sujets devraient-ils toujours être traités avec solennité et sérieux ?"}, {"ro": "Ai întâlnit vreodată o situație în care cineva a făcut o glumă pe un subiect pe care îl considerai tabu și cum ai reacționat?", "en": "Have you ever encountered a situation where someone made a joke about a topic you considered taboo, and how did you respond?", "fr": "As-tu déjà rencontré une situation où quelqu'un a fait une blague sur un sujet que tu jugeais tabou, et comment as-tu réagi ?"}, {"ro": "Cum influențează contextul cultural percepția ta despre ce subiecte sunt nepotrivite pentru umor și crezi că aceste granițe variază de la o societate la alta?", "en": "How does cultural context influence your perception of what topics are inappropriate for humour, and do you think these boundaries vary across different societies?", "fr": "Comment le contexte culturel influence-t-il ta perception des sujets inappropriés pour l'humour, et penses-tu que ces limites varient d'une société à l'autre ?"}, {"ro": "Poate fi umorul o modalitate de a face față unei traume personale sau unor experiențe dificile și, dacă da, unde tragi linia între râsul terapeutic și posibilul rău?", "en": "Can humour be a means of coping with personal trauma or difficult experiences, and if so, where do you draw the line between therapeutic laughter and potential harm?", "fr": "L'humour peut-il être un moyen de faire face à un traumatisme personnel ou à des expériences difficiles et, si oui, où traces-tu la ligne entre le rire thérapeutique et le tort possible ?"}, {"ro": "Crezi că intenția contează atunci când faci glume pe teme sensibile și cum ar trebui să cântărim impactul cuvintelor asupra unor audiențe diferite?", "en": "Do you believe that intent matters when it comes to making jokes about sensitive topics, and how should one consider the impact of their words on different audiences?", "fr": "Crois-tu que l'intention compte lorsqu'on fait des blagues sur des sujets sensibles, et comment devrait-on considérer l'impact de ses mots sur des publics différents ?"}, {"ro": "Au comedianții sau artiștii o responsabilitate de a lua în calcul răul pe care l-ar putea provoca glumele lor sau exprimarea creativă ar trebui să fie nelimitată de sensibilitățile societății?", "en": "Is there a responsibility for comedians or entertainers to consider the potential harm their jokes may cause, or should creative expression be unrestricted by societal sensitivities?", "fr": "Les comédiens ou artistes ont-ils la responsabilité de considérer le tort que leurs blagues pourraient causer, ou l'expression créative devrait-elle être sans limites imposées par les sensibilités sociales ?"}, {"ro": "Cum poate fi folosit umorul în mod constructiv pentru a aborda subiecte dificile și a stârni dialog, în loc să perpetueze stereotipuri sau narațiuni dăunătoare?", "en": "How can humour be used constructively to address challenging subjects and foster dialogue, rather than perpetuating stereotypes or reinforcing harmful narratives?", "fr": "Comment l'humour peut-il être utilisé de manière constructive pour aborder des sujets difficiles et susciter le dialogue, plutôt que de perpétuer des stéréotypes ou des récits nuisibles ?"}, {"ro": "Ți-ai schimbat vreodată părerea despre dacă un anumit subiect e potrivit pentru umor și, dacă da, ce a declanșat această schimbare?", "en": "Have you ever changed your perspective on whether a certain topic is suitable for humour, and if so, what prompted this shift in your thinking?", "fr": "As-tu déjà changé d'avis sur le fait qu'un certain sujet soit approprié à l'humour et, si oui, qu'est-ce qui a déclenché ce changement ?"}, {"ro": "În viziunea ta, ar trebui să existe linii directoare universale sau norme culturale care să definească ce subiecte sunt interzise glumelor pentru toți, sau e o chestiune subiectivă, ce ține de valorile și experiențele fiecăruia?", "en": "In your view, should there be universal guidelines or cultural norms that help define which topics are universally off-limits for jokes, or is it a subjective matter dependent on individual values and experiences?", "fr": "Selon toi, devrait-il exister des lignes directrices universelles ou des normes culturelles définissant quels sujets sont universellement interdits aux blagues, ou est-ce une question subjective dépendant des valeurs et expériences de chacun ?"}]}];
+const BRAND_HTML = {ro:'Pro<em>fund</em>', en:'<em>Deep</em>', fr:'Pro<em>fond</em>'};
+const BRAND_PLAIN = {ro:'Profund', en:'Deep', fr:'Profond'};
+
+let lang = 'ro';
+let active = 0;
+let lastDraw = null;
+let deck = [];
+let deckIdx = 0;
+
+/* restore saved language (gracefully ignored where storage is unavailable) */
+try{ const s=localStorage.getItem('profund_lang'); if(s && I18N[s]) lang=s; }catch(e){}
+
+const nav = document.getElementById('blocksNav');
+const grid = document.getElementById('cardGrid');
+const blockTitle = document.getElementById('blockTitle');
+const drawCard = document.getElementById('drawCard');
+const drawText = document.getElementById('drawText');
+const drawTag = document.getElementById('drawTag');
+
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  try{ localStorage.setItem('profund_lang', l); }catch(e){}
+  ['Ro','En','Fr'].forEach(s=>document.getElementById('btn'+s).classList.toggle('active', s.toLowerCase()===l));
+  const t = I18N[l];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(t[k] !== undefined) el.innerHTML = t[k];
+  });
+  buildTabs();
+  selectBlock(active);
+  if(lastDraw){
+    drawTag.textContent = deck.length ? ((deckIdx)+' / '+deck.length+' · '+BLOCKS[lastDraw.bi].tag[l]) : BLOCKS[lastDraw.bi].tag[l];
+    drawText.textContent = BLOCKS[lastDraw.bi].q[lastDraw.qi][l];
+  }
+  buildPrintSheet();
+}
+
+function buildTabs(){
+  nav.innerHTML='';
+  BLOCKS.forEach((b,i)=>{
+    const tab=document.createElement('button');
+    tab.className='block-tab'+(i===active?' active':'');
+    tab.textContent=(i+1);
+    tab.title=b.title[lang];
+    tab.onclick=()=>selectBlock(i);
+    nav.appendChild(tab);
+  });
+}
+
+function selectBlock(i){
+  active=i;
+  [...nav.children].forEach((t,idx)=>t.classList.toggle('active',idx===i));
+  blockTitle.textContent=BLOCKS[i].title[lang];
+  grid.innerHTML='';
+  BLOCKS[i].q.forEach((item,qi)=>{
+    const card=document.createElement('button');
+    card.className='card';
+    card.innerHTML='<div class="card-inner">'+
+      '<div class="card-face card-back"><span class="mark">'+BRAND_HTML[lang]+'</span><span class="ripple"></span></div>'+
+      '<div class="card-face card-front"><span class="n">'+(i+1)+'.'+(qi+1)+'</span><span class="q">'+item[lang]+'</span></div>'+
+    '</div>';
+    card.onclick=()=>card.classList.toggle('flipped');
+    grid.appendChild(card);
+  });
+}
+
+function showCard(bi,qi,tagText){
+  lastDraw={bi,qi};
+  drawCard.classList.remove('flip'); void drawCard.offsetWidth; drawCard.classList.add('flip');
+  drawTag.textContent = tagText;
+  drawText.textContent = BLOCKS[bi].q[qi][lang];
+}
+
+/* random card (with repeats) */
+document.getElementById('drawBtn').onclick=()=>{
+  const bi=Math.floor(Math.random()*BLOCKS.length);
+  const qi=Math.floor(Math.random()*BLOCKS[bi].q.length);
+  showCard(bi,qi,BLOCKS[bi].tag[lang]);
+};
+
+/* shuffle whole deck */
+function shuffleDeck(){
+  deck=[];
+  BLOCKS.forEach((b,bi)=>b.q.forEach((_,qi)=>deck.push({bi,qi})));
+  for(let k=deck.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[deck[k],deck[j]]=[deck[j],deck[k]];}
+  deckIdx=0; lastDraw=null;
+  drawCard.classList.remove('flip'); void drawCard.offsetWidth; drawCard.classList.add('flip');
+  drawTag.textContent='0 / '+deck.length;
+  drawText.textContent=I18N[lang].deck_shuffled;
+}
+document.getElementById('shuffleBtn').onclick=shuffleDeck;
+
+/* next card from deck */
+document.getElementById('nextBtn').onclick=()=>{
+  if(!deck.length){ shuffleDeck(); return; }
+  if(deckIdx>=deck.length){
+    drawCard.classList.remove('flip'); void drawCard.offsetWidth; drawCard.classList.add('flip');
+    drawTag.textContent=deck.length+' / '+deck.length;
+    drawText.textContent=I18N[lang].deck_done;
+    deck=[]; lastDraw=null; return;
+  }
+  const {bi,qi}=deck[deckIdx]; deckIdx++;
+  showCard(bi,qi, deckIdx+' / '+deck.length+' · '+BLOCKS[bi].tag[lang]);
+};
+
+/* print sheet */
+function buildPrintSheet(){
+  const sheet=document.getElementById('printSheet');
+  let html='<div class="print-head">'+I18N[lang].print_head+'</div><div class="print-grid">';
+  BLOCKS.forEach((b,i)=>{
+    b.q.forEach((item,qi)=>{
+      html+='<div class="print-card"><div class="pc-top">'+b.tag[lang]+' · '+(i+1)+'.'+(qi+1)+'</div><div class="pc-q">'+item[lang]+'</div><div class="pc-foot">'+BRAND_PLAIN[lang]+'</div></div>';
+    });
+  });
+  html+='</div>';
+  sheet.innerHTML=html;
+}
+document.getElementById('printBtn').onclick=()=>{ buildPrintSheet(); window.print(); };
+
+/* download txt */
+document.getElementById('txtBtn').onclick=()=>{
+  const head = {ro:'PROFUND — 150 de întrebări pentru conversații cu sens',
+                en:'DEEP — 150 questions for meaningful conversations',
+                fr:'PROFOND — 150 questions pour des conversations qui ont du sens'}[lang];
+  const sub = {ro:'(joc fără-troc · adaptare după deepcards.org)',
+               en:'(trade-free game · adaptation of deepcards.org)',
+               fr:'(jeu sans-échange · adaptation de deepcards.org)'}[lang];
+  let txt = head+'\n'+sub+'\n\n';
+  BLOCKS.forEach((b,i)=>{
+    txt += '\n=== '+b.title[lang]+' ===\n';
+    b.q.forEach((item,qi)=>{ txt += (i+1)+'.'+(qi+1)+'  '+item[lang]+'\n'; });
+  });
+  const blob=new Blob([txt],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download = {ro:'profund-intrebari.txt', en:'deep-questions.txt', fr:'profond-questions.txt'}[lang];
+  a.click(); URL.revokeObjectURL(a.href);
+};
+
+setLang(lang);
+</script>
+</body>
+</html>
