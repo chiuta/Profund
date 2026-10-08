@@ -18,6 +18,7 @@
 -->
 <html lang="ro">
 <head>
+<meta charset="UTF-8">
 <style id="tf-a11y-motion">
 /* Accesibilitate: respectă preferința utilizatorului pentru mai puțină mișcare (TROM/a11y). */
 @media (prefers-reduced-motion: reduce){
@@ -47,7 +48,6 @@
 @font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(data:font/woff2;base64,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) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
 </style>
 
-<meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'self' blob:; script-src 'self' 'unsafe-inline' blob:; connect-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="title">Profund – aprindem conversații cu sens</title>
@@ -327,7 +327,7 @@
       <p class="lead" data-i18n="contact_lead"></p>
       <p style="margin-top:1.4rem;font-weight:600">📮 <a href="mailto:alexio@trom.tf" style="color:var(--teal-500);text-decoration:none">alexio@trom.tf</a></p>
     </div>
-    <form onsubmit="event.preventDefault();this.querySelector('.sent').style.display='block';">
+    <form id="contactForm">
       <label for="nm" data-i18n="f_name"></label>
       <input id="nm" type="text" required>
       <label for="em" data-i18n="f_email"></label>
@@ -424,7 +424,8 @@ function selectBlock(i){
       '<div class="card-face card-back"><span class="mark">'+BRAND_HTML[lang]+'</span><span class="ripple"></span></div>'+
       '<div class="card-face card-front"><span class="n">'+(i+1)+'.'+(qi+1)+'</span><span class="q">'+item[lang]+'</span></div>'+
     '</div>';
-    card.onclick=()=>card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed','false');
+    card.onclick=()=>{ const on=card.classList.toggle('flipped'); card.setAttribute('aria-pressed',on?'true':'false'); };
     grid.appendChild(card);
   });
 }
@@ -482,6 +483,21 @@ function buildPrintSheet(){
 }
 document.getElementById('printBtn').onclick=()=>{ buildPrintSheet(); window.print(); };
 
+/* contact: aplicația nu are server — pregătim un e-mail (mailto:) către autor, în clientul de e-mail al utilizatorului;
+   înainte, formularul doar afișa „Mesajul a fost pregătit" și arunca textul. */
+(function(){
+  const f=document.getElementById('contactForm'); if(!f) return;
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const hp=f.querySelector('.hp'); if(hp && hp.value) return;
+    const v=id=>(document.getElementById(id).value||'').trim();
+    const subj=v('sb')||('Profund — '+v('nm'));
+    const body=v('msg')+'\n\n— '+v('nm')+' <'+v('em')+'>';
+    f.querySelector('.sent').style.display='block';
+    try{ window.location.href='mailto:alexio@trom.tf?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body); }catch(err){}
+  });
+})();
+
 /* download txt */
 document.getElementById('txtBtn').onclick=()=>{
   const head = {ro:'PROFUND — 150 de întrebări pentru conversații cu sens',
@@ -499,7 +515,8 @@ document.getElementById('txtBtn').onclick=()=>{
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
   a.download = {ro:'profund-intrebari.txt', en:'deep-questions.txt', fr:'profond-questions.txt'}[lang];
-  a.click(); URL.revokeObjectURL(a.href);
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
 };
 
 setLang(lang);
