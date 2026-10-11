@@ -20,6 +20,7 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 - Joc online: întrebările sunt în blocuri de câte 10; apeși pe o carte ca s-o întorci. Butoane „Carte la întâmplare", „Amestecă pachetul", „Următoarea carte".
 - Jucători (opțional, doar în memorie): scrii numele separate prin virgulă și fiecare carte trasă arată, pe rând, cine răspunde.
 - Scurtături de tastatură în zona „Joacă online": `Spațiu` sau `→` = următoarea carte, `R` = carte la întâmplare, `S` = amestecă (nu se activează în afara zonei de joc sau în câmpurile de text).
+- Favorite și temporizator (în zona „Joacă online”): „♡ Păstrează cartea” marchează cartea trasă, iar „Descarcă favoritele (text)” salvează lista ca `profund-favorite.txt`; favoritele există doar în memorie, până la reîncărcarea paginii. Temporizatorul opțional (30 / 60 / 120 s) pornește la fiecare carte trasă și afișează „Timpul a expirat.” la final (fără sunet). Texte în RO / EN / FR.
 - Joc offline: „Printează cărțile (PDF)" (150 de cărți, 3 pe rând, gata de decupat) și „Descarcă întrebările (text)".
 - Formular de contact care pregătește un e-mail (mailto) către autor.
 
@@ -44,6 +45,10 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet (linkurile externe necesită conexiune).
 
 ## Istoric / Changelog
+
+### 11 octombrie 2026 (a treia intrare)
+- Corectat titlul modului în engleză: „LetGuess” → „Guess” (cum sunt „Ghicește” în română și „Devine” în franceză).
+- Favorite (descărcabile ca text) și temporizator opțional pe carte, în 3 limbi.
 
 ### 11 octombrie 2026 (a doua intrare)
 - Politica CSP: `script-src` cu hash în loc de `'unsafe-inline'` (nu mai există atribute `on*` inline).
