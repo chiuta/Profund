@@ -18,6 +18,8 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 - Prezentare: ce este jocul, cele trei idei ale lui și ce s-ar putea întâmpla.
 - Patru moduri de joc descrise: „Ia & Răspunde" (2–6 persoane), „Ghicește" (2–6), „Declanșator de conversații" (4–20), „FărăRăspuns – TreciLaAcțiune" (2–10).
 - Joc online: întrebările sunt în blocuri de câte 10; apeși pe o carte ca s-o întorci. Butoane „Carte la întâmplare", „Amestecă pachetul", „Următoarea carte".
+- Jucători (opțional, doar în memorie): scrii numele separate prin virgulă și fiecare carte trasă arată, pe rând, cine răspunde.
+- Scurtături de tastatură în zona „Joacă online": `Spațiu` sau `→` = următoarea carte, `R` = carte la întâmplare, `S` = amestecă (nu se activează în afara zonei de joc sau în câmpurile de text).
 - Joc offline: „Printează cărțile (PDF)" (150 de cărți, 3 pe rând, gata de decupat) și „Descarcă întrebările (text)".
 - Formular de contact care pregătește un e-mail (mailto) către autor.
 
@@ -43,6 +45,10 @@ Descarcă `index.html` și deschide-l în browser; funcționează fără interne
 
 ## Istoric / Changelog
 
+### 11 octombrie 2026 (a doua intrare)
+- Politica CSP: `script-src` cu hash în loc de `'unsafe-inline'` (nu mai există atribute `on*` inline).
+- Câmp opțional „Jucători" (rândul de răspuns pe carte trasă) și scurtături de tastatură; texte noi în RO / EN / FR.
+
 ### 11 octombrie 2026
 - Accesibilitate: conținutul încadrat în <main>, selectorul de limbă ca <nav> etichetat (axe: 0 violări).
 - Butoanele RO / EN / FR nu mai folosesc atribute `onclick` inline (ascultători de evenimente).
@@ -66,4 +72,4 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl me
 
 ## English summary
 
-Profund ("Deep") is a single-file trade-free question card game (150 cards) for meaningful conversations, in Romanian, English and French. It offers four ways to play, an online card deck, print-to-PDF cards and a text download. Only the chosen language is stored in localStorage; no external requests were found, and the contact form uses mailto. Adapted from deepcards.org. CC0 applies only to the code and the author's original contribution; the original questions remain with their rightsholders. Rectification/withdrawal requests: alexio@trom.tf (reply within 7 days).
+Profund ("Deep") is a single-file trade-free question card game (150 cards) for meaningful conversations, in Romanian, English and French. It offers four ways to play, an optional (memory-only) player list that shows whose turn it is to answer, keyboard shortcuts, an online card deck, print-to-PDF cards and a text download. Only the chosen language is stored in localStorage; no external requests were found, and the contact form uses mailto. Adapted from deepcards.org. CC0 applies only to the code and the author's original contribution; the original questions remain with their rightsholders. Rectification/withdrawal requests: alexio@trom.tf (reply within 7 days).
