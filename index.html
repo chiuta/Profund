@@ -223,11 +223,11 @@
 </head>
 <body>
 
-<div class="lang-toggle">
-  <button id="btnRo" class="active" onclick="setLang('ro')">RO</button>
-  <button id="btnEn" onclick="setLang('en')">EN</button>
-  <button id="btnFr" onclick="setLang('fr')">FR</button>
-</div>
+<nav class="lang-toggle" aria-label="Limbă / Language / Langue">
+  <button id="btnRo" class="active" data-l="ro">RO</button>
+  <button id="btnEn" data-l="en">EN</button>
+  <button id="btnFr" data-l="fr">FR</button>
+</nav>
 
 <header class="hero">
   <svg class="emblem" viewBox="0 0 100 100" fill="none" aria-hidden="true">
@@ -246,6 +246,7 @@
   <a href="#despre" class="scroll-hint" data-i18n="scroll">derulează în jos</a>
 </header>
 
+<main id="main">
 <section class="intro" id="despre">
   <div class="wrap narrow">
     <span class="eyebrow" data-i18n="intro_eyebrow"></span>
@@ -346,6 +347,7 @@
     </form>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="fmark" data-i18n="brand"></div>
@@ -386,6 +388,7 @@ const drawCard = document.getElementById('drawCard');
 const drawText = document.getElementById('drawText');
 const drawTag = document.getElementById('drawTag');
 
+document.querySelectorAll('.lang-toggle button[data-l]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
 function setLang(l){
   lang = l;
   document.documentElement.lang = l;
@@ -527,7 +530,7 @@ document.getElementById('txtBtn').onclick=()=>{
 setLang(lang);
 </script>
 <!-- tf-donate: sprijin voluntar (Patreon + Buy Me a Coffee) — self-contained, fără resurse externe, fără JS -->
-<div id="tf-donate" aria-label="Sprijină autorul">
+<div id="tf-donate" role="complementary" aria-label="Sprijină autorul">
 <style>
 #tf-donate{position:fixed;right:14px;bottom:14px;z-index:2147483600;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1}
 #tf-donate *{box-sizing:border-box}

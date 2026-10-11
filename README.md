@@ -4,6 +4,8 @@ Joc de întrebări „fără-troc" (trade-free) pentru conversații cu sens — 
 
 **Live:** https://chiuta.github.io/Profund/
 
+**Ultima actualizare:** 11 octombrie 2026
+
 ![Captura de ecran](screenshot.png)
 
 ## Ce este
@@ -38,6 +40,12 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 ## Rulare locală / offline
 
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet (linkurile externe necesită conexiune).
+
+## Istoric / Changelog
+
+### 11 octombrie 2026
+- Accesibilitate: conținutul încadrat în <main>, selectorul de limbă ca <nav> etichetat (axe: 0 violări).
+- Butoanele RO / EN / FR nu mai folosesc atribute `onclick` inline (ascultători de evenimente).
 
 ## Licență
 
