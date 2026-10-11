@@ -43,6 +43,10 @@ Descarcă `index.html` și deschide-l în browser; funcționează fără interne
 
 CC0 1.0 Universal (domeniu public) — vezi fișierul LICENSE
 
+### Sursa întrebărilor și drepturile asupra lor
+
+Întrebările din joc sunt o **adaptare** (română / engleză / franceză) după jocul de cărți **deepcards.org** (proiect din ecosistemul TROM); aplicația însăși o prezintă astfel (subtitlul „adaptare după deepcards.org"). Dedicarea CC0 declarată în antetul `index.html` și în `LICENSE` se aplică codului și contribuției originale a autorului acestui repository. Licența sub care sunt publicate întrebările originale de la deepcards.org nu este verificată în acest repository, iar acest README nu afirmă că ele pot fi dedicate domeniului public. **NEREZOLVAT:** confirmarea autorului că deține (sau a obținut) dreptul de a dedica CC0 întrebările adaptate, ori indicarea licenței originalelor.
+
 ## Autor
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl menționează ca voluntar TROM.
