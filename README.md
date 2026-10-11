@@ -43,9 +43,14 @@ Descarcă `index.html` și deschide-l în browser; funcționează fără interne
 
 CC0 1.0 Universal (domeniu public) — vezi fișierul LICENSE
 
-### Sursa întrebărilor și drepturile asupra lor
+## Drepturi și atribuire
 
-Întrebările din joc sunt o **adaptare** (română / engleză / franceză) după jocul de cărți **deepcards.org** (proiect din ecosistemul TROM); aplicația însăși o prezintă astfel (subtitlul „adaptare după deepcards.org"). Dedicarea CC0 declarată în antetul `index.html` și în `LICENSE` se aplică codului și contribuției originale a autorului acestui repository. Licența sub care sunt publicate întrebările originale de la deepcards.org nu este verificată în acest repository, iar acest README nu afirmă că ele pot fi dedicate domeniului public. **NEREZOLVAT:** confirmarea autorului că deține (sau a obținut) dreptul de a dedica CC0 întrebările adaptate, ori indicarea licenței originalelor.
+- **Partea autorului:** codul aplicației și contribuția originală (adaptarea, traducerile RO/EN/FR, interfața). Dedicarea CC0 1.0 din antetul `index.html` și din `LICENSE` se aplică **doar** acestei părți.
+- **Partea terților:** întrebările sunt adaptate după jocul de cărți [deepcards.org](https://deepcards.org/) (proiect din ecosistemul TROM; aplicația îl indică în subtitlu și în subsol). Originalele rămân ale titularilor lor; **dedicarea CC0 nu le acoperă**. Drepturile asupra materialelor terțe aparțin titularilor. Licența originalelor nu este verificată în acest repository.
+- **Rectificare / retragere:** dacă ești titular de drepturi sau persoană menționată și dorești corectarea sau retragerea, scrie la alexio@trom.tf; răspundem în 7 zile.
+- Nota este vizibilă și în aplicație (subsol, RO / EN / FR).
+
+**NEREZOLVAT (doar autorul):** confirmarea că are (sau a obținut) dreptul de a publica întrebările adaptate în această formă ori indicarea licenței originalelor de la deepcards.org.
 
 ## Autor
 
@@ -53,4 +58,4 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl me
 
 ## English summary
 
-Profund ("Deep") is a single-file trade-free question card game (150 cards) for meaningful conversations, in Romanian, English and French. It offers four ways to play, an online card deck, print-to-PDF cards and a text download. Only the chosen language is stored in localStorage; no external requests were found, and the contact form uses mailto. Adapted from deepcards.org. CC0.
+Profund ("Deep") is a single-file trade-free question card game (150 cards) for meaningful conversations, in Romanian, English and French. It offers four ways to play, an online card deck, print-to-PDF cards and a text download. Only the chosen language is stored in localStorage; no external requests were found, and the contact form uses mailto. Adapted from deepcards.org. CC0 applies only to the code and the author's original contribution; the original questions remain with their rightsholders. Rectification/withdrawal requests: alexio@trom.tf (reply within 7 days).
