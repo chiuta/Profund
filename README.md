@@ -4,7 +4,7 @@ Joc de întrebări „fără-troc" (trade-free) pentru conversații cu sens — 
 
 **Live:** https://chiuta.github.io/Profund/
 
-**Versiune:** 1.0.0 · **Ultima actualizare:** 12 octombrie 2026
+**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
 
 ![Captura de ecran](screenshot.png)
 
@@ -45,6 +45,9 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet (linkurile externe necesită conexiune).
 
 ## Istoric / Changelog
+
+### 1.1.0 — 2026-10-14
+- Copie de rezervă și etichetare date (fff-kit).
 
 ### 12 octombrie 2026 (v1.0.0)
 - 1.0.0 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
