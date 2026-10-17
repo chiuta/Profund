@@ -13,8 +13,8 @@
   "storageKeys": [
     "profund_lang"
   ],
-  "sizeBytes": 442461,
-  "sha256": "139c5c131508cf140839dec1c5c3ca03db929ab12d6c7163087700001a5e4c9c",
+  "sizeBytes": 442441,
+  "sha256": "e0d01f20e16f5c7bad12d1653a541487aa9b7047aff5d26fa8ff35bb2e731f72",
   "csp": {
     "present": true,
     "directives": {
