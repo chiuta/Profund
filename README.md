@@ -37,7 +37,7 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 
 - Local: se păstrează doar limba aleasă, în `localStorage` (cheia `profund_lang`).
 - Rețea: nu am găsit apeluri `fetch`, scripturi sau fonturi externe (fonturile sunt integrate în fișier). Textul din aplicație afirmă „fără bani, fără date".
-- Linkurile din subsol și cele de susținere (deepcards.org, tiotrom.com, trade-free.org, Patreon, Buy Me a Coffee) se deschid doar dacă le apeși.
+- Linkurile din subsol și cele de susținere (deepcards.org, tiotrom.com, trade-free.org, Buy Me a Coffee) se deschid doar dacă le apeși.
 - Formularul de contact nu trimite date printr-un server; folosește `mailto:`.
 
 ## Rulare locală / offline
