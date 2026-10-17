@@ -66,12 +66,12 @@ Descarcă `index.html` și deschide-l în browser; funcționează fără interne
 
 ## Licență
 
-CC0 1.0 Universal (domeniu public) — vezi fișierul LICENSE
+Licență MIT — vezi fișierul LICENSE
 
 ## Drepturi și atribuire
 
-- **Partea autorului:** codul aplicației și contribuția originală (adaptarea, traducerile RO/EN/FR, interfața). Dedicarea CC0 1.0 din antetul `index.html` și din `LICENSE` se aplică **doar** acestei părți.
-- **Partea terților:** întrebările sunt adaptate după jocul de cărți [deepcards.org](https://deepcards.org/) (proiect din ecosistemul TROM; aplicația îl indică în subtitlu și în subsol). Originalele rămân ale titularilor lor; **dedicarea CC0 nu le acoperă**. Drepturile asupra materialelor terțe aparțin titularilor. Licența originalelor nu este verificată în acest repository.
+- **Partea autorului:** codul aplicației și contribuția originală (adaptarea, traducerile RO/EN/FR, interfața). Licența MIT din antetul `index.html` și din `LICENSE` se aplică **doar** acestei părți.
+- **Partea terților:** întrebările sunt adaptate după jocul de cărți [deepcards.org](https://deepcards.org/) (proiect din ecosistemul TROM; aplicația îl indică în subtitlu și în subsol). Originalele rămân ale titularilor lor; **licența MIT nu le acoperă**. Drepturile asupra materialelor terțe aparțin titularilor. Licența originalelor nu este verificată în acest repository.
 - **Rectificare / retragere:** dacă ești titular de drepturi sau persoană menționată și dorești corectarea sau retragerea, scrie la alexio@trom.tf; răspundem în 7 zile.
 - Nota este vizibilă și în aplicație (subsol, RO / EN / FR).
 
@@ -83,4 +83,4 @@ Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl me
 
 ## English summary
 
-Profund ("Deep") is a single-file trade-free question card game (150 cards) for meaningful conversations, in Romanian, English and French. It offers four ways to play, an optional (memory-only) player list that shows whose turn it is to answer, keyboard shortcuts, an online card deck, print-to-PDF cards and a text download. Only the chosen language is stored in localStorage; no external requests were found, and the contact form uses mailto. Adapted from deepcards.org. CC0 applies only to the code and the author's original contribution; the original questions remain with their rightsholders. Rectification/withdrawal requests: alexio@trom.tf (reply within 7 days).
+Profund ("Deep") is a single-file trade-free question card game (150 cards) for meaningful conversations, in Romanian, English and French. It offers four ways to play, an optional (memory-only) player list that shows whose turn it is to answer, keyboard shortcuts, an online card deck, print-to-PDF cards and a text download. Only the chosen language is stored in localStorage; no external requests were found, and the contact form uses mailto. Adapted from deepcards.org. The MIT License applies only to the code and the author's original contribution; the original questions remain with their rightsholders. Rectification/withdrawal requests: alexio@trom.tf (reply within 7 days).
