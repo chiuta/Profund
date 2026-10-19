@@ -10,7 +10,7 @@ Un gioco di domande «trade-free» (senza scambio commerciale) per conversazioni
 
 **App online:** https://chiuta.github.io/Profund/
 
-![Schermata](screenshot.png)
+![Schermata](screenshot.it.png)
 
 ## Che cos'è
 

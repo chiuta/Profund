@@ -10,7 +10,7 @@ Ein „Trade-free“-Fragenspiel (ohne Handel) für Gespräche mit Tiefgang — 
 
 **Online-App:** https://chiuta.github.io/Profund/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.de.png)
 
 ## Was es ist
 

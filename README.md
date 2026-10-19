@@ -10,7 +10,7 @@ A "trade-free" question game for meaningful conversations — #FaraVorbeGoale (#
 
 **Live app:** https://chiuta.github.io/Profund/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.en.png)
 
 ## What it is
 

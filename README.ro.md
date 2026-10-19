@@ -10,7 +10,7 @@ Joc de întrebări „fără-troc" (trade-free) pentru conversații cu sens — 
 
 **Live:** https://chiuta.github.io/Profund/
 
-![Captura de ecran](screenshot.png)
+![Captura de ecran](screenshot.ro.png)
 
 ## Ce este
 

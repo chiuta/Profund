@@ -10,7 +10,7 @@ Um jogo de perguntas «trade-free» (sem troca comercial) para conversas com sen
 
 **Aplicação online:** https://chiuta.github.io/Profund/
 
-![Captura de ecrã](screenshot.png)
+![Captura de ecrã](screenshot.pt.png)
 
 ## O que é
 
