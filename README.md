@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.1.0 · **Last updated:** 2026-10-14
+**Version:** 1.2.0 · **Last updated:** 2026-10-19
+
+Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 A "trade-free" question game for meaningful conversations — #FaraVorbeGoale (#NoSmallTalk).
 
@@ -16,7 +18,7 @@ Profund is a game of 150 cards with questions that open up conversations, in a s
 
 ## Features
 
-- Interface in Romanian, English and French (RO / EN / FR buttons).
+- Interface in 8 languages (RO / EN / FR / IT / ES / PT / DE / HU buttons); the 150 questions exist in Romanian, English and French (the other languages show the English version).
 - Introduction: what the game is, its three ideas and what might happen.
 - Four game modes described: "Ia & Răspunde" (Take & Answer, 2–6 people), "Ghicește" (Guess, 2–6), "Declanșator de conversații" (Conversation Starter, 4–20), "FărăRăspuns – TreciLaAcțiune" (No Answer – Go to Action, 2–10).
 - Online play: the questions come in blocks of 10; you press a card to flip it. Buttons "Carte la întâmplare" (Random card), "Amestecă pachetul" (Shuffle the deck), "Următoarea carte" (Next card).
@@ -28,7 +30,7 @@ Profund is a game of 150 cards with questions that open up conversations, in a s
 
 ## User guide
 
-1. Choose the language with the RO / EN / FR buttons at the top.
+1. Choose the language with the RO / EN / FR / IT / ES / PT / DE / HU buttons at the top.
 2. Read the "Moduri de joc" (Game modes) section and choose one.
 3. Under "Joacă online", press "Carte la întâmplare" for a card, "Amestecă pachetul" to shuffle, then "Următoarea carte". When the deck runs out, shuffle again.
 4. For physical play, under "Joacă offline" press "Printează cărțile (PDF)", choose "Save as PDF" or print, then cut out the cards.

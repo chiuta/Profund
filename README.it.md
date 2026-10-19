@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.1.0 · **Ultimo aggiornamento:** 2026-10-14
+**Versione:** 1.2.0 · **Ultimo aggiornamento:** 2026-10-19
+
+Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Un gioco di domande «trade-free» (senza scambio commerciale) per conversazioni che abbiano senso — #FaraVorbeGoale (#NienteChiacchiereVuote).
 
@@ -16,7 +18,7 @@ Profund è un gioco di 150 carte con domande che aprono conversazioni, in un uni
 
 ## Funzioni
 
-- Interfaccia in rumeno, inglese e francese (pulsanti RO / EN / FR).
+- Interfaccia in 8 lingue (pulsanti RO / EN / FR / IT / ES / PT / DE / HU); le 150 domande esistono in rumeno, inglese e francese (le altre lingue mostrano la versione inglese).
 - Presentazione: che cos'è il gioco, le sue tre idee e che cosa potrebbe succedere.
 - Quattro modalità di gioco descritte: «Ia & Răspunde» (Prendi e rispondi, 2–6 persone), «Ghicește» (Indovina, 2–6), «Declanșator de conversații» (Innesco di conversazioni, 4–20), «FărăRăspuns – TreciLaAcțiune» (Senza risposta – Passa all'azione, 2–10).
 - Gioco online: le domande sono in blocchi da 10; premi una carta per girarla. Pulsanti «Carte la întâmplare» (Carta a caso), «Amestecă pachetul» (Mescola il mazzo), «Următoarea carte» (Carta successiva).
@@ -28,7 +30,7 @@ Profund è un gioco di 150 carte con domande che aprono conversazioni, in un uni
 
 ## Guida all'uso
 
-1. Scegli la lingua con i pulsanti RO / EN / FR in alto.
+1. Scegli la lingua con i pulsanti RO / EN / FR / IT / ES / PT / DE / HU in alto.
 2. Leggi la sezione «Moduri de joc» (Modalità di gioco) e scegline una.
 3. In «Joacă online» premi «Carte la întâmplare» per una carta, «Amestecă pachetul» per mescolare, poi «Următoarea carte». Quando il mazzo finisce, mescola di nuovo.
 4. Per il gioco fisico, in «Joacă offline» premi «Printează cărțile (PDF)», scegli «Salva come PDF» oppure stampa, poi ritaglia le carte.

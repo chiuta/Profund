@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.1.0 · **Utolsó frissítés:** 2026-10-14
+**Verzió:** 1.2.0 · **Utolsó frissítés:** 2026-10-19
+
+A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 „Trade-free” (kereskedelemmentes) kérdezős játék tartalmas beszélgetésekhez — #FaraVorbeGoale (#NincsÜresBeszéd).
 
@@ -16,7 +18,7 @@ A Profund egy 150 kártyából álló játék beszélgetéseket megnyitó kérd�
 
 ## Funkciók
 
-- Felület románul, angolul és franciául (RO / EN / FR gombok).
+- 8 nyelvű felület (RO / EN / FR / IT / ES / PT / DE / HU gombok); a 150 kérdés románul, angolul és franciául létezik (a többi nyelven az angol változat látható).
 - Bemutató: mi a játék, a három alapgondolata, és mi történhet.
 - Négy leírt játékmód: „Ia & Răspunde” (Húzz és válaszolj, 2–6 fő), „Ghicește” (Találd ki, 2–6), „Declanșator de conversații” (Beszélgetésindító, 4–20), „FărăRăspuns – TreciLaAcțiune” (Válasz nélkül – Térj át a cselekvésre, 2–10).
 - Online játék: a kérdések 10-es blokkokban vannak; egy kártyára kattintva megfordítod. Gombok: „Carte la întâmplare” (Véletlen kártya), „Amestecă pachetul” (Pakli keverése), „Următoarea carte” (Következő kártya).
@@ -28,7 +30,7 @@ A Profund egy 150 kártyából álló játék beszélgetéseket megnyitó kérd�
 
 ## Használati útmutató
 
-1. Válaszd ki a nyelvet a felül lévő RO / EN / FR gombokkal.
+1. Válaszd ki a nyelvet a felül lévő RO / EN / FR / IT / ES / PT / DE / HU gombokkal.
 2. Olvasd el a „Moduri de joc” (Játékmódok) szakaszt, és válassz egyet.
 3. A „Joacă online” alatt a „Carte la întâmplare” gombbal húzol egy kártyát, az „Amestecă pachetul” gombbal keversz, majd jöhet a „Următoarea carte”. Ha elfogy a pakli, keverd meg újra.
 4. Fizikai játékhoz a „Joacă offline” alatt nyomd meg a „Printează cărțile (PDF)” gombot, válaszd a „Mentés PDF-ként” lehetőséget, vagy nyomtass, majd vágd ki a kártyákat.

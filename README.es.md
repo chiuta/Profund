@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.1.0 · **Última actualización:** 2026-10-14
+**Versión:** 1.2.0 · **Última actualización:** 2026-10-19
+
+Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Un juego de preguntas «trade-free» (sin trueque comercial) para conversaciones con sentido — #FaraVorbeGoale (#SinPalabrasVacías).
 
@@ -16,7 +18,7 @@ Profund es un juego de 150 cartas con preguntas que abren conversaciones, en un 
 
 ## Funciones
 
-- Interfaz en rumano, inglés y francés (botones RO / EN / FR).
+- Interfaz en 8 idiomas (botones RO / EN / FR / IT / ES / PT / DE / HU); las 150 preguntas existen en rumano, inglés y francés (los demás idiomas muestran la versión en inglés).
 - Presentación: qué es el juego, sus tres ideas y qué podría pasar.
 - Cuatro modos de juego descritos: «Ia & Răspunde» (Toma y responde, 2–6 personas), «Ghicește» (Adivina, 2–6), «Declanșator de conversații» (Detonante de conversaciones, 4–20), «FărăRăspuns – TreciLaAcțiune» (Sin respuesta – Pasa a la acción, 2–10).
 - Juego en línea: las preguntas van en bloques de 10; pulsas una carta para darle la vuelta. Botones «Carte la întâmplare» (Carta al azar), «Amestecă pachetul» (Barajar el mazo), «Următoarea carte» (Siguiente carta).
@@ -28,7 +30,7 @@ Profund es un juego de 150 cartas con preguntas que abren conversaciones, en un 
 
 ## Guía de uso
 
-1. Elige el idioma con los botones RO / EN / FR de la parte superior.
+1. Elige el idioma con los botones RO / EN / FR / IT / ES / PT / DE / HU de la parte superior.
 2. Lee la sección «Moduri de joc» (Modos de juego) y elige uno.
 3. En «Joacă online» pulsa «Carte la întâmplare» para una carta, «Amestecă pachetul» para barajar y luego «Următoarea carte». Cuando se acabe el mazo, baraja de nuevo.
 4. Para el juego físico, en «Joacă offline» pulsa «Printează cărțile (PDF)», elige «Guardar como PDF» o imprime, y luego recorta las cartas.

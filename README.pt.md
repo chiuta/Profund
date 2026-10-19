@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.1.0 · **Última atualização:** 2026-10-14
+**Versão:** 1.2.0 · **Última atualização:** 2026-10-19
+
+Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Um jogo de perguntas «trade-free» (sem troca comercial) para conversas com sentido — #FaraVorbeGoale (#SemConversaVazia).
 
@@ -16,7 +18,7 @@ O Profund é um jogo de 150 cartas com perguntas que abrem conversas, num único
 
 ## Funcionalidades
 
-- Interface em romeno, inglês e francês (botões RO / EN / FR).
+- Interface em 8 idiomas (botões RO / EN / FR / IT / ES / PT / DE / HU); as 150 perguntas existem em romeno, inglês e francês (os outros idiomas mostram a versão em inglês).
 - Apresentação: o que é o jogo, as suas três ideias e o que poderá acontecer.
 - Quatro modos de jogo descritos: «Ia & Răspunde» (Pega e responde, 2–6 pessoas), «Ghicește» (Adivinha, 2–6), «Declanșator de conversații» (Desencadeador de conversas, 4–20), «FărăRăspuns – TreciLaAcțiune» (Sem resposta – Passa à ação, 2–10).
 - Jogo online: as perguntas estão em blocos de 10; prime uma carta para a virar. Botões «Carte la întâmplare» (Carta ao acaso), «Amestecă pachetul» (Baralhar o baralho), «Următoarea carte» (Carta seguinte).
@@ -28,7 +30,7 @@ O Profund é um jogo de 150 cartas com perguntas que abrem conversas, num único
 
 ## Manual de utilização
 
-1. Escolha o idioma com os botões RO / EN / FR no topo.
+1. Escolha o idioma com os botões RO / EN / FR / IT / ES / PT / DE / HU no topo.
 2. Leia a secção «Moduri de joc» (Modos de jogo) e escolha um.
 3. Em «Joacă online», prima «Carte la întâmplare» para uma carta, «Amestecă pachetul» para baralhar e depois «Următoarea carte». Quando o baralho acabar, baralhe de novo.
 4. Para o jogo físico, em «Joacă offline» prima «Printează cărțile (PDF)», escolha «Guardar como PDF» ou imprima, e depois recorte as cartas.

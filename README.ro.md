@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 2026-10-14
+**Versiune:** 1.2.0 · **Ultima actualizare:** 2026-10-19
+
+Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Joc de întrebări „fără-troc" (trade-free) pentru conversații cu sens — #FaraVorbeGoale.
 
@@ -16,7 +18,7 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 
 ## Funcții
 
-- Interfață în română, engleză și franceză (butoane RO / EN / FR).
+- Interfață în 8 limbi (butoane RO / EN / FR / IT / ES / PT / DE / HU); cele 150 de întrebări există în română, engleză și franceză (celelalte limbi afișează varianta engleză).
 - Prezentare: ce este jocul, cele trei idei ale lui și ce s-ar putea întâmpla.
 - Patru moduri de joc descrise: „Ia & Răspunde" (2–6 persoane), „Ghicește" (2–6), „Declanșator de conversații" (4–20), „FărăRăspuns – TreciLaAcțiune" (2–10).
 - Joc online: întrebările sunt în blocuri de câte 10; apeși pe o carte ca s-o întorci. Butoane „Carte la întâmplare", „Amestecă pachetul", „Următoarea carte".
@@ -28,7 +30,7 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 
 ## Manual de utilizare
 
-1. Alege limba din butoanele RO / EN / FR din partea de sus.
+1. Alege limba din butoanele RO / EN / FR / IT / ES / PT / DE / HU din partea de sus.
 2. Citește secțiunea „Moduri de joc" și alege unul.
 3. La „Joacă online" apasă „Carte la întâmplare" pentru o carte, „Amestecă pachetul" pentru a amesteca, apoi „Următoarea carte". Când pachetul se termină, amestecă din nou.
 4. Pentru joc fizic, la „Joacă offline" apasă „Printează cărțile (PDF)", alege „Salvează ca PDF" sau imprimă, apoi decupează cărțile.

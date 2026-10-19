@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.1.0 · **Dernière mise à jour :** 2026-10-14
+**Version :** 1.2.0 · **Dernière mise à jour :** 2026-10-19
+
+Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Un jeu de questions « trade-free » (sans troc) pour des conversations qui ont du sens — #FaraVorbeGoale (#PasDePetitesPhrases).
 
@@ -16,7 +18,7 @@ Profund est un jeu de 150 cartes avec des questions qui ouvrent des conversation
 
 ## Fonctionnalités
 
-- Interface en roumain, anglais et français (boutons RO / EN / FR).
+- Interface en 8 langues (boutons RO / EN / FR / IT / ES / PT / DE / HU) ; les 150 questions existent en roumain, anglais et français (les autres langues affichent la version anglaise).
 - Présentation : ce qu'est le jeu, ses trois idées et ce qui pourrait se passer.
 - Quatre modes de jeu décrits : « Ia & Răspunde » (Prends & réponds, 2–6 personnes), « Ghicește » (Devine, 2–6), « Declanșator de conversații » (Déclencheur de conversations, 4–20), « FărăRăspuns – TreciLaAcțiune » (Sans réponse – Passe à l'action, 2–10).
 - Jeu en ligne : les questions sont réparties en blocs de 10 ; on appuie sur une carte pour la retourner. Boutons « Carte la întâmplare » (Carte au hasard), « Amestecă pachetul » (Mélanger le paquet), « Următoarea carte » (Carte suivante).
@@ -28,7 +30,7 @@ Profund est un jeu de 150 cartes avec des questions qui ouvrent des conversation
 
 ## Mode d'emploi
 
-1. Choisissez la langue avec les boutons RO / EN / FR en haut.
+1. Choisissez la langue avec les boutons RO / EN / FR / IT / ES / PT / DE / HU en haut.
 2. Lisez la section « Moduri de joc » (Modes de jeu) et choisissez-en un.
 3. Dans « Joacă online », appuyez sur « Carte la întâmplare » pour une carte, sur « Amestecă pachetul » pour mélanger, puis sur « Următoarea carte ». Quand le paquet est épuisé, mélangez à nouveau.
 4. Pour le jeu physique, dans « Joacă offline », appuyez sur « Printează cărțile (PDF) », choisissez « Enregistrer au format PDF » ou imprimez, puis découpez les cartes.

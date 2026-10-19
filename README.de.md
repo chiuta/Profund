@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.1.0 · **Zuletzt aktualisiert:** 2026-10-14
+**Version:** 1.2.0 · **Zuletzt aktualisiert:** 2026-10-19
+
+Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Ein „Trade-free“-Fragenspiel (ohne Handel) für Gespräche mit Tiefgang — #FaraVorbeGoale (#KeinSmalltalk).
 
@@ -16,7 +18,7 @@ Profund ist ein Spiel mit 150 Karten voller Fragen, die Gespräche eröffnen, in
 
 ## Funktionen
 
-- Oberfläche auf Rumänisch, Englisch und Französisch (Schaltflächen RO / EN / FR).
+- Oberfläche in 8 Sprachen (Schaltflächen RO / EN / FR / IT / ES / PT / DE / HU); die 150 Fragen gibt es auf Rumänisch, Englisch und Französisch (die anderen Sprachen zeigen die englische Fassung).
 - Vorstellung: was das Spiel ist, seine drei Ideen und was passieren könnte.
 - Vier beschriebene Spielmodi: „Ia & Răspunde“ (Nimm & antworte, 2–6 Personen), „Ghicește“ (Rate, 2–6), „Declanșator de conversații“ (Gesprächsauslöser, 4–20), „FărăRăspuns – TreciLaAcțiune“ (Ohne Antwort – Geh zur Tat über, 2–10).
 - Online-Spiel: Die Fragen sind in Blöcken zu je 10 angeordnet; ein Klick auf eine Karte dreht sie um. Schaltflächen „Carte la întâmplare“ (Zufällige Karte), „Amestecă pachetul“ (Stapel mischen), „Următoarea carte“ (Nächste Karte).
@@ -28,7 +30,7 @@ Profund ist ein Spiel mit 150 Karten voller Fragen, die Gespräche eröffnen, in
 
 ## Anleitung
 
-1. Wähle die Sprache mit den Schaltflächen RO / EN / FR oben.
+1. Wähle die Sprache mit den Schaltflächen RO / EN / FR / IT / ES / PT / DE / HU oben.
 2. Lies den Abschnitt „Moduri de joc“ (Spielmodi) und wähle einen aus.
 3. Unter „Joacă online“ drückst du „Carte la întâmplare“ für eine Karte, „Amestecă pachetul“ zum Mischen und dann „Următoarea carte“. Wenn der Stapel aufgebraucht ist, mische erneut.
 4. Für das physische Spiel drückst du unter „Joacă offline“ auf „Printează cărțile (PDF)“, wählst „Als PDF speichern“ oder druckst, und schneidest die Karten dann aus.
