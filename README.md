@@ -1,85 +1,87 @@
 # Profund
 
-Joc de întrebări „fără-troc" (trade-free) pentru conversații cu sens — #FaraVorbeGoale.
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Live:** https://chiuta.github.io/Profund/
+**Version:** 1.1.0 · **Last updated:** 2026-10-14
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
+A "trade-free" question game for meaningful conversations — #FaraVorbeGoale (#NoSmallTalk).
 
-![Captura de ecran](screenshot.png)
+**Live app:** https://chiuta.github.io/Profund/
 
-## Ce este
+![Screenshot](screenshot.png)
 
-Profund este un joc de 150 de cărți cu întrebări care deschid conversații, într-un singur fișier HTML. Textul din aplicație îl descrie ca adaptare română / engleză / franceză după deepcards.org, proiect din ecosistemul TROM. Se poate juca online (cărți care se întorc la apăsare) sau offline, prin cărți tipărite.
+## What it is
 
-## Funcții
+Profund is a game of 150 cards with questions that open up conversations, in a single HTML file. The text in the app describes it as a Romanian / English / French adaptation after deepcards.org, a project from the TROM ecosystem. It can be played online (cards that flip when pressed) or offline, with printed cards.
 
-- Interfață în română, engleză și franceză (butoane RO / EN / FR).
-- Prezentare: ce este jocul, cele trei idei ale lui și ce s-ar putea întâmpla.
-- Patru moduri de joc descrise: „Ia & Răspunde" (2–6 persoane), „Ghicește" (2–6), „Declanșator de conversații" (4–20), „FărăRăspuns – TreciLaAcțiune" (2–10).
-- Joc online: întrebările sunt în blocuri de câte 10; apeși pe o carte ca s-o întorci. Butoane „Carte la întâmplare", „Amestecă pachetul", „Următoarea carte".
-- Jucători (opțional, doar în memorie): scrii numele separate prin virgulă și fiecare carte trasă arată, pe rând, cine răspunde.
-- Scurtături de tastatură în zona „Joacă online": `Spațiu` sau `→` = următoarea carte, `R` = carte la întâmplare, `S` = amestecă (nu se activează în afara zonei de joc sau în câmpurile de text).
-- Favorite și temporizator (în zona „Joacă online”): „♡ Păstrează cartea” marchează cartea trasă, iar „Descarcă favoritele (text)” salvează lista ca `profund-favorite.txt`; favoritele există doar în memorie, până la reîncărcarea paginii. Temporizatorul opțional (30 / 60 / 120 s) pornește la fiecare carte trasă și afișează „Timpul a expirat.” la final (fără sunet). Texte în RO / EN / FR.
-- Joc offline: „Printează cărțile (PDF)" (150 de cărți, 3 pe rând, gata de decupat) și „Descarcă întrebările (text)".
-- Formular de contact care pregătește un e-mail (mailto) către autor.
+## Features
 
-## Manual de utilizare
+- Interface in Romanian, English and French (RO / EN / FR buttons).
+- Introduction: what the game is, its three ideas and what might happen.
+- Four game modes described: "Ia & Răspunde" (Take & Answer, 2–6 people), "Ghicește" (Guess, 2–6), "Declanșator de conversații" (Conversation Starter, 4–20), "FărăRăspuns – TreciLaAcțiune" (No Answer – Go to Action, 2–10).
+- Online play: the questions come in blocks of 10; you press a card to flip it. Buttons "Carte la întâmplare" (Random card), "Amestecă pachetul" (Shuffle the deck), "Următoarea carte" (Next card).
+- Players (optional, in memory only): type the names separated by commas and each drawn card shows, in turn, who answers.
+- Keyboard shortcuts in the "Joacă online" (Play online) area: `Space` or `→` = next card, `R` = random card, `S` = shuffle (not active outside the play area or in text fields).
+- Favorites and timer (in the "Joacă online" area): "♡ Păstrează cartea" (Keep the card) marks the drawn card, and "Descarcă favoritele (text)" (Download favorites (text)) saves the list as `profund-favorite.txt`; favorites exist only in memory, until the page is reloaded. The optional timer (30 / 60 / 120 s) starts with each drawn card and shows "Timpul a expirat." (Time is up.) at the end (no sound). Texts in RO / EN / FR.
+- Offline play: "Printează cărțile (PDF)" (Print the cards (PDF); 150 cards, 3 per row, ready to cut out) and "Descarcă întrebările (text)" (Download the questions (text)).
+- Contact form that prepares an email (mailto) to the author.
 
-1. Alege limba din butoanele RO / EN / FR din partea de sus.
-2. Citește secțiunea „Moduri de joc" și alege unul.
-3. La „Joacă online" apasă „Carte la întâmplare" pentru o carte, „Amestecă pachetul" pentru a amesteca, apoi „Următoarea carte". Când pachetul se termină, amestecă din nou.
-4. Pentru joc fizic, la „Joacă offline" apasă „Printează cărțile (PDF)", alege „Salvează ca PDF" sau imprimă, apoi decupează cărțile.
-5. „Descarcă întrebările (text)" salvează întrebările într-un fișier text.
-6. La „Contact" completezi numele, e-mailul, subiectul și mesajul și apeși „Trimite mesajul": se deschide clientul tău de e-mail cu un mesaj către alexio@trom.tf (aplicația nu are server).
+## User guide
 
-## Confidențialitate și rețea
+1. Choose the language with the RO / EN / FR buttons at the top.
+2. Read the "Moduri de joc" (Game modes) section and choose one.
+3. Under "Joacă online", press "Carte la întâmplare" for a card, "Amestecă pachetul" to shuffle, then "Următoarea carte". When the deck runs out, shuffle again.
+4. For physical play, under "Joacă offline" press "Printează cărțile (PDF)", choose "Save as PDF" or print, then cut out the cards.
+5. "Descarcă întrebările (text)" saves the questions in a text file.
+6. Under "Contact" you fill in your name, email, subject and message and press "Trimite mesajul" (Send the message): your email client opens with a message to alexio@trom.tf (the app has no server).
 
-- Local: se păstrează doar limba aleasă, în `localStorage` (cheia `profund_lang`).
-- Rețea: nu am găsit apeluri `fetch`, scripturi sau fonturi externe (fonturile sunt integrate în fișier). Textul din aplicație afirmă „fără bani, fără date".
-- Linkurile din subsol și cele de susținere (deepcards.org, tiotrom.com, trade-free.org, Buy Me a Coffee) se deschid doar dacă le apeși.
-- Formularul de contact nu trimite date printr-un server; folosește `mailto:`.
+## Privacy and network
 
-## Rulare locală / offline
+- Local: only the chosen language is kept, in `localStorage` (key `profund_lang`).
+- Network: I found no `fetch` calls, external scripts or fonts (the fonts are embedded in the file). The text in the app states "no money, no data".
+- The footer links and the support links (deepcards.org, tiotrom.com, trade-free.org, Buy Me a Coffee) open only if you press them.
+- The contact form does not send data through a server; it uses `mailto:`.
 
-Descarcă `index.html` și deschide-l în browser; funcționează fără internet (linkurile externe necesită conexiune).
+## Running locally / offline
 
-## Istoric / Changelog
+Download `index.html` and open it in a browser; it works without internet (external links need a connection).
+
+## History / Changelog
 
 ### 1.1.0 — 2026-10-14
-- Copie de rezervă și etichetare date (fff-kit).
+- Backup and data labeling (fff-kit).
 
-### 12 octombrie 2026 (v1.0.0)
-- 1.0.0 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
+### 12 October 2026 (v1.0.0)
+- 1.0.0 — 2026-10-12: the version and the date of the last update are shown in the app
 
-### 11 octombrie 2026 (a treia intrare)
-- Corectat titlul modului în engleză: „LetGuess” → „Guess” (cum sunt „Ghicește” în română și „Devine” în franceză).
-- Favorite (descărcabile ca text) și temporizator opțional pe carte, în 3 limbi.
+### 11 October 2026 (third entry)
+- Fixed the English mode title: "LetGuess" → "Guess" (like "Ghicește" in Romanian and "Devine" in French).
+- Favorites (downloadable as text) and an optional per-card timer, in 3 languages.
 
-### 11 octombrie 2026 (a doua intrare)
-- Politica CSP: `script-src` cu hash în loc de `'unsafe-inline'` (nu mai există atribute `on*` inline).
-- Câmp opțional „Jucători" (rândul de răspuns pe carte trasă) și scurtături de tastatură; texte noi în RO / EN / FR.
+### 11 October 2026 (second entry)
+- CSP: `script-src` with a hash instead of `'unsafe-inline'` (there are no more inline `on*` attributes).
+- Optional "Players" field (the answering player's row on the drawn card) and keyboard shortcuts; new texts in RO / EN / FR.
 
-### 11 octombrie 2026
-- Accesibilitate: conținutul încadrat în <main>, selectorul de limbă ca <nav> etichetat (axe: 0 violări).
-- Butoanele RO / EN / FR nu mai folosesc atribute `onclick` inline (ascultători de evenimente).
+### 11 October 2026
+- Accessibility: content wrapped in <main>, language selector as a labeled <nav> (axe: 0 violations).
+- The RO / EN / FR buttons no longer use inline `onclick` attributes (event listeners).
 
-## Licență
+## License
 
-Licență MIT — vezi fișierul LICENSE
+MIT License — see the LICENSE file
 
-## Drepturi și atribuire
+## Rights and attribution
 
-- **Partea autorului:** codul aplicației și contribuția originală (adaptarea, traducerile RO/EN/FR, interfața). Licența MIT din antetul `index.html` și din `LICENSE` se aplică **doar** acestei părți.
-- **Partea terților:** întrebările sunt adaptate după jocul de cărți [deepcards.org](https://deepcards.org/) (proiect din ecosistemul TROM; aplicația îl indică în subtitlu și în subsol). Originalele rămân ale titularilor lor; **licența MIT nu le acoperă**. Drepturile asupra materialelor terțe aparțin titularilor. Licența originalelor nu este verificată în acest repository.
-- **Rectificare / retragere:** dacă ești titular de drepturi sau persoană menționată și dorești corectarea sau retragerea, scrie la alexio@trom.tf; răspundem în 7 zile.
-- Nota este vizibilă și în aplicație (subsol, RO / EN / FR).
+- **The author's part:** the application code and the original contribution (the adaptation, the RO/EN/FR translations, the interface). The MIT license in the `index.html` header and in `LICENSE` applies **only** to this part.
+- **The third parties' part:** the questions are adapted from the card game [deepcards.org](https://deepcards.org/) (a project from the TROM ecosystem; the app points to it in the subtitle and in the footer). The originals remain with their rightsholders; **the MIT license does not cover them**. Rights in third-party materials belong to their holders. The license of the originals has not been verified in this repository.
+- **Rectification / withdrawal:** if you are a rightsholder or a person mentioned and wish a correction or withdrawal, write to alexio@trom.tf; we reply within 7 days.
+- The notice is also visible in the app (footer, RO / EN / FR).
 
-**NEREZOLVAT (doar autorul):** confirmarea că are (sau a obținut) dreptul de a publica întrebările adaptate în această formă ori indicarea licenței originalelor de la deepcards.org.
+**UNRESOLVED (author only):** confirmation that he has (or has obtained) the right to publish the adapted questions in this form, or indication of the license of the originals from deepcards.org.
 
-## Autor
+## Author
 
-Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. Aplicația îl menționează ca voluntar TROM.
+Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf. The app mentions him as a TROM volunteer.
 
 ## English summary
 
