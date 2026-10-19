@@ -85,6 +85,7 @@ Licence MIT — voir le fichier LICENSE
 
 Alexio — Alexandru-Ionuț Chiuță, contact : alexio@trom.tf. L'application le mentionne comme bénévole de TROM.
 
-## English summary
+## Résumé
 
-Profund ("Deep") is a single-file trade-free question card game (150 cards) for meaningful conversations, in Romanian, English and French. It offers four ways to play, an optional (memory-only) player list that shows whose turn it is to answer, keyboard shortcuts, an online card deck, print-to-PDF cards and a text download. Only the chosen language is stored in localStorage; no external requests were found, and the contact form uses mailto. Adapted from deepcards.org. The MIT License applies only to the code and the author's original contribution; the original questions remain with their rightsholders. Rectification/withdrawal requests: alexio@trom.tf (reply within 7 days).
+Profund (« Profond ») est un jeu de cartes de questions en un seul fichier, sans commerce (trade-free), de 150 cartes pour des conversations qui comptent, en roumain, anglais et français. Il propose quatre façons de jouer, une liste de joueurs facultative (en mémoire seulement) qui indique à qui revient de répondre, des raccourcis clavier, un jeu de cartes en ligne, des cartes imprimables en PDF et un téléchargement en texte. Seule la langue choisie est stockée dans localStorage ; aucune requête externe n'a été trouvée, et le formulaire de contact utilise mailto. Adapté de deepcards.org. La licence MIT ne s'applique qu'au code et à la contribution originale de l'auteur ; les questions d'origine restent à leurs ayants droit. Demandes de rectification/retrait : alexio@trom.tf (réponse sous 7 jours).
+
