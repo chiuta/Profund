@@ -13,8 +13,8 @@
   "storageKeys": [
     "profund_lang"
   ],
-  "sizeBytes": 440887,
-  "sha256": "04ff36007744ca15b8d12c03d1a21111f38210e09417fa62462c7d1fbce3a14b",
+  "sizeBytes": 441523,
+  "sha256": "e114204132f5e964eacbb757250df9b34b08c4daf8ef49c5601a6903eb8eb656",
   "csp": {
     "present": true,
     "directives": {
@@ -53,7 +53,7 @@
     ]
   },
   "kit": {
-    "version": "1.0.0",
+    "version": "1.1.1",
     "modules": [
       "core",
       "label",
