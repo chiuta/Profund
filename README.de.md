@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.2.1 · **Zuletzt aktualisiert:** 2026-10-19
+**Version:** 1.2.2 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -49,6 +49,10 @@ Profund ist ein Spiel mit 150 Karten voller Fragen, die Gespräche eröffnen, in
 Lade `index.html` herunter und öffne sie in einem Browser; sie funktioniert ohne Internet (externe Links benötigen eine Verbindung).
 
 ## Verlauf / Changelog
+
+### 1.2.2 — 2026-10-22
+
+Feinschliff für Mobilgeräte und Barrierefreiheit: Text mit mindestens 12 px und Touch-Ziele von mindestens 24 px. sichtbarer Tastaturfokus bei jedem Steuerelement.
 
 ### 1.1.0 — 2026-10-14
 - Sicherung und Kennzeichnung der Daten (fff-kit).

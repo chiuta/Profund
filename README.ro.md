@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.1 · **Ultima actualizare:** 2026-10-19
+**Versiune:** 1.2.2 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -49,6 +49,10 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 Descarcă `index.html` și deschide-l în browser; funcționează fără internet (linkurile externe necesită conexiune).
 
 ## Istoric / Changelog
+
+### 1.2.2 — 2026-10-22
+
+finisaje pentru mobil și accesibilitate: text de cel puțin 12 px și ținte tactile de cel puțin 24 px. focus de tastatură vizibil pe orice control.
 
 ### 1.1.0 — 2026-10-14
 - Copie de rezervă și etichetare date (fff-kit).

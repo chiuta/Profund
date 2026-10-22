@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.2.1 · **Ultimo aggiornamento:** 2026-10-19
+**Versione:** 1.2.2 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -49,6 +49,10 @@ Profund è un gioco di 150 carte con domande che aprono conversazioni, in un uni
 Scarica `index.html` e aprilo in un browser; funziona senza internet (i link esterni richiedono una connessione).
 
 ## Cronologia / Changelog
+
+### 1.2.2 — 2026-10-22
+
+rifiniture per mobile e accessibilità: testo di almeno 12 px e aree tattili di almeno 24 px. focus da tastiera visibile su ogni controllo.
 
 ### 1.1.0 — 2026-10-14
 - Copia di riserva ed etichettatura dei dati (fff-kit).

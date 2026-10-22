@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.2.1 · **Utolsó frissítés:** 2026-10-19
+**Verzió:** 1.2.2 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -49,6 +49,10 @@ A Profund egy 150 kártyából álló játék beszélgetéseket megnyitó kérd�
 Töltsd le az `index.html` fájlt, és nyisd meg egy böngészőben; internet nélkül is működik (a külső linkekhez kapcsolat kell).
 
 ## Előzmények / Changelog
+
+### 1.2.2 — 2026-10-22
+
+mobil és kisegítő finomítások: legalább 12 px-es szöveg és legalább 24 px-es érintési felületek. látható billentyűzetfókusz minden vezérlőn.
 
 ### 1.1.0 — 2026-10-14
 - Biztonsági mentés és adatcímkézés (fff-kit).
