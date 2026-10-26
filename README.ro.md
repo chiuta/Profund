@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.7 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -25,6 +25,7 @@ Profund este un joc de 150 de cărți cu întrebări care deschid conversații, 
 - Jucători (opțional, doar în memorie): scrii numele separate prin virgulă și fiecare carte trasă arată, pe rând, cine răspunde.
 - Scurtături de tastatură în zona „Joacă online": `Spațiu` sau `→` = următoarea carte, `R` = carte la întâmplare, `S` = amestecă (nu se activează în afara zonei de joc sau în câmpurile de text).
 - Favorite și temporizator (în zona „Joacă online”): „♡ Păstrează cartea” marchează cartea trasă, iar „Descarcă favoritele (text)” salvează lista ca `profund-favorite.txt`; favoritele există doar în memorie, până la reîncărcarea paginii. Temporizatorul opțional (30 / 60 / 120 s) pornește la fiecare carte trasă și afișează „Timpul a expirat.” la final (fără sunet). Texte în RO / EN / FR.
+- **Provocarea zilei (v2.0):** secțiunea „Provocarea zilei” alege, după data de azi și dificultate (Ușor / Mediu / Adânc), aceeași mână de 5 cărți pentru toată lumea (fără server, indiferent de limbă). Marchezi fiecare carte (🌱 pe suprafață, 🌊 în profunzime, 🔥 vulnerabil, ⏭️ trec), iar rezultatul se copiază ca emoji, fără textul întrebărilor. Seria de zile se păstrează local (`profund_daily`); modul Antrenament nu salvează nimic.
 - Joc offline: „Printează cărțile (PDF)" (150 de cărți, 3 pe rând, gata de decupat) și „Descarcă întrebările (text)".
 - Formular de contact care pregătește un e-mail (mailto) către autor.
 
