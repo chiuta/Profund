@@ -15,8 +15,8 @@
     "profund_daily",
     "profund_lang"
   ],
-  "sizeBytes": 628923,
-  "sha256": "7a9edb6fd910da9419b6a73b94520fa252e68e6bb9638259c78193e6a8cb91da",
+  "sizeBytes": 769357,
+  "sha256": "ea1b49f7d309fb622f95a254785e6fa2b0367874dc5c3991b11021c798d6b422",
   "csp": {
     "present": true,
     "directives": {
@@ -58,7 +58,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "kit": {
@@ -68,7 +72,11 @@
       "store",
       "dialog",
       "label",
-      "bundle"
+      "bundle",
+      "qr",
+      "p2p",
+      "sync",
+      "history"
     ]
   },
   "selfSerializing": false
