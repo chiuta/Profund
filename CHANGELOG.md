@@ -1,5 +1,9 @@
 # Jurnal de modificări
 
+## 2.0.5 — 2026-11-08
+
+- Notă lângă butoanele „Trec” / „Următoarea carte”: „Poți spune «Trec» oricând, fără explicații” (8 limbi); test `nota-trec`.
+
 ## 2.0.2 — 2026-11-03
 
 Turneu și clasament Elo local (motor comun de jocuri), rezultate notate de mână
