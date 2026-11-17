@@ -2,8 +2,8 @@
   "schema": 1,
   "slug": "profund",
   "name": "Profund – aprindem conversații cu sens",
-  "version": "2.1.1",
-  "updated": "2026-11-15",
+  "version": "2.1.2",
+  "updated": "2026-11-17",
   "description": "Joc de întrebări „fără-troc” (trade-free) pentru conversații cu sens — #FaraVorbeGoale.",
   "egress": [],
   "permissions": [
@@ -19,8 +19,8 @@
     "profund_daily",
     "profund_lang"
   ],
-  "sizeBytes": 1058991,
-  "sha256": "8a4868491135eaff161a8bb58de6f18e8411957381d52b81fad753752f49361c",
+  "sizeBytes": 1125309,
+  "sha256": "c9ee280ca0ad6e3dd58b4fbfa1455b91bbc49d4ecffa0ea1c1f20e7d7075e8c1",
   "csp": {
     "present": true,
     "directives": {
@@ -33,7 +33,7 @@
       "base-uri": "'self'",
       "form-action": "'self'",
       "worker-src": "'self' blob:",
-      "script-src": "'self' blob: sha256×7",
+      "script-src": "'self' blob: sha256×9",
       "connect-src": "'self'",
       "manifest-src": "'self'"
     },
@@ -75,7 +75,7 @@
     ]
   },
   "kit": {
-    "version": "1.7.0",
+    "version": "1.8.0",
     "modules": [
       "core",
       "store",
